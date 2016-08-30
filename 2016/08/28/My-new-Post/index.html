@@ -84,13 +84,28 @@
 
 
 
+<meta name="description" content="常见 flash 报错原因:
+
+flash 版本太低，请至少大于等于 11.4，低于此版本请提示更新 flash 版本
+按钮或者他的父级被设置 display:none 隐藏了，在这种情况下 flash 会停止运行，请改用以下方式隐藏，给 需要隐藏的元素加 webuploader-element-invisible 类名代替加 display:none 属性。
+ .webuploader-elem">
 <meta property="og:type" content="article">
-<meta property="og:title" content="My new Post">
+<meta property="og:title" content="Web Uploader上传按钮失效">
 <meta property="og:url" content="http://yoursite.com/2016/08/28/My-new-Post/index.html">
 <meta property="og:site_name" content="空咚's blog">
-<meta property="og:updated_time" content="2016-08-28T10:35:31.000Z">
+<meta property="og:description" content="常见 flash 报错原因:
+
+flash 版本太低，请至少大于等于 11.4，低于此版本请提示更新 flash 版本
+按钮或者他的父级被设置 display:none 隐藏了，在这种情况下 flash 会停止运行，请改用以下方式隐藏，给 需要隐藏的元素加 webuploader-element-invisible 类名代替加 display:none 属性。
+ .webuploader-elem">
+<meta property="og:updated_time" content="2016-08-30T01:16:20.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="My new Post">
+<meta name="twitter:title" content="Web Uploader上传按钮失效">
+<meta name="twitter:description" content="常见 flash 报错原因:
+
+flash 版本太低，请至少大于等于 11.4，低于此版本请提示更新 flash 版本
+按钮或者他的父级被设置 display:none 隐藏了，在这种情况下 flash 会停止运行，请改用以下方式隐藏，给 需要隐藏的元素加 webuploader-element-invisible 类名代替加 display:none 属性。
+ .webuploader-elem">
 
 
 
@@ -113,7 +128,7 @@
 
   <link rel="canonical" href="http://yoursite.com/2016/08/28/My-new-Post/"/>
 
-  <title> My new Post | 空咚's blog </title>
+  <title> Web Uploader上传按钮失效 | 空咚's blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -243,7 +258,7 @@
             
             
               
-                My new Post
+                Web Uploader上传按钮失效
               
             
           </h1>
@@ -283,7 +298,14 @@
       
 
       
-        
+        <p>常见 flash 报错原因:</p>
+<ol>
+<li>flash 版本太低，请至少大于等于 11.4，低于此版本请提示更新 flash 版本</li>
+<li><p>按钮或者他的父级被设置 display:none 隐藏了，在这种情况下 flash 会停止运行，请改用以下方式隐藏，给 需要隐藏的元素加 webuploader-element-invisible 类名代替加 display:none 属性。</p>
+<p> .webuploader-element-invisible {<br> position: absolute !important;<br> clip: rect(1px 1px 1px 1px); /<em> IE6, IE7 </em>/clip: rect(1px,1px,1px,1px);}</p>
+</li>
+</ol>
+
       
     </div>
 
@@ -312,8 +334,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/08/29/hello-world/" rel="prev" title="Hello World">
-                Hello World <i class="fa fa-chevron-right"></i>
+              <a href="/2016/08/30/解决iframe窗体丢失Session时登录窗口显示在子页面的问题/" rel="prev" title="解决iframe窗体丢失Session时登录窗口显示在子页面的问题">
+                解决iframe窗体丢失Session时登录窗口显示在子页面的问题 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
