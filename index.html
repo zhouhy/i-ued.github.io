@@ -338,19 +338,19 @@
 
       
         
-          
-            <ul>
-<li>方法概述：<br><br>map()  返回一个由原数组中的每个元素调用一个指定方法后的返回值组成的新数组。</li>
-<li>例子<br><br>1.在字符串中使用map<br><br> 在一个string上使用map获取字符串中每个字符所对应的ASCII码组成的数组：<br> <pre><code>var map = Array.prototype.map; 
+          <ul>
+<li>方法概述：<br /><br>map()  返回一个由原数组中的每个元素调用一个指定方法后的返回值组成的新数组。</li>
+<li>例子<Br><br>1.在字符串中使用map<br><br> 在一个string上使用map获取字符串中每个字符所对应的ASCII码组成的数组：<br> <pre><code>var map = Array.prototype.map; 
 var a = map.call(&quot;hello world&quot;,function(x){  
     return x.charCodeAt(0);  
 });  
 //a的值【72，101，108，108，111，32，87，111，114，108，100】
-</code></pre></li>
-</ul>
-<p>2.易犯错误<br>通常情况下，map方法中的callback函数只需要接受一个参数（很多时候，自定义函数的形参只有一个），就是正在被遍历的数据元素本身。<br>但这并不意味着callback只传了一个参数(会传递3个参数)。这个思维惯性可能会让我们犯一个很容易犯的错误。<br>        <pre><br>    //下面的语句返回什么呢：<br>    [“1”,”2”,”3”].map(parseInt);<br>    //你可能觉得会返回[1,2,3]<br>    //但实际结果是[1,NaN,NaN]<br>    //通常使用parseInt()时，只需要传递一个参数，但实际上parseInt()可以有两个参数，第二个参数是进制数，可以通过语句”console.log(parseInt.length)”来验证。<br>    //map方法在调用callback函数时，会给它传递三个参数：当前正在遍历的元素，元素索引，原数组本身。<br>    //第三个参数parseInt会自动忽略，但第二个不会，也就是parseInt把传过来的索引值当成进制数来使用，从而返回NaN。<br>    //应该使用如下的函数returnInt<br>        function returnInt(el){<br>            return parseInt(el,10);<br>        }<br>        [“1”,”2”,”3”].map(returnInt);<br>    </pre><br><br><br><br>    文章引用：<a href="http://www.cnblogs.com/rocky-fang/p/5756733.html" target="_blank" rel="external">http://www.cnblogs.com/rocky-fang/p/5756733.html</a></p>
-
-          
+</code></pre>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2017/02/23/jsmap/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
