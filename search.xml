@@ -5,7 +5,7 @@
     
     <entry>
       <title><![CDATA[JS自带map方法]]></title>
-      <url>http://yoursite.com/2017/02/23/jsmap/</url>
+      <url>http://zhouhy.me/2017/02/23/jsmap/</url>
       <content type="html"><![CDATA[<ul>
 <li>方法概述：<br><br>map()  返回一个由原数组中的每个元素调用一个指定方法后的返回值组成的新数组。</li>
 <li>例子<br><br>1.在字符串中使用map<br><br> 在一个string上使用map获取字符串中每个字符所对应的ASCII码组成的数组：<br> <pre><code>var map = Array.prototype.map; 
@@ -29,7 +29,7 @@ var a = map.call(&quot;hello world&quot;,function(x){
     
     <entry>
       <title><![CDATA[解决iframe窗体丢失Session时登录窗口显示在子页面的问题]]></title>
-      <url>http://yoursite.com/2016/08/30/%E8%A7%A3%E5%86%B3iframe%E7%AA%97%E4%BD%93%E4%B8%A2%E5%A4%B1Session%E6%97%B6%E7%99%BB%E5%BD%95%E7%AA%97%E5%8F%A3%E6%98%BE%E7%A4%BA%E5%9C%A8%E5%AD%90%E9%A1%B5%E9%9D%A2%E7%9A%84%E9%97%AE%E9%A2%98/</url>
+      <url>http://zhouhy.me/2016/08/30/%E8%A7%A3%E5%86%B3iframe%E7%AA%97%E4%BD%93%E4%B8%A2%E5%A4%B1Session%E6%97%B6%E7%99%BB%E5%BD%95%E7%AA%97%E5%8F%A3%E6%98%BE%E7%A4%BA%E5%9C%A8%E5%AD%90%E9%A1%B5%E9%9D%A2%E7%9A%84%E9%97%AE%E9%A2%98/</url>
       <content type="html"><![CDATA[<p>若在项目是应该了iframe的朋友也许会碰到与我一样的问题。当窗体Sessoin丢失后登录的窗体在显示在iframe的主窗口中，这还不算，更糟的是登录后，又多出来了一个iframe。真有点伤脑筋。呵呵，今天特意找了一下资料，希望对大家有所帮助，解决方法其实很简单。代码如下：</p>
 <pre><code>//在登录页面的onload中调用如下方法：
 function ready(){
@@ -51,7 +51,7 @@ function ready(){
     
     <entry>
       <title><![CDATA[Web Uploader上传按钮失效]]></title>
-      <url>http://yoursite.com/2016/08/28/Web%20Uploader%E4%B8%8A%E4%BC%A0%E6%8C%89%E9%92%AE%E5%A4%B1%E6%95%88/</url>
+      <url>http://zhouhy.me/2016/08/28/Web%20Uploader%E4%B8%8A%E4%BC%A0%E6%8C%89%E9%92%AE%E5%A4%B1%E6%95%88/</url>
       <content type="html"><![CDATA[<p>常见 flash 报错原因:</p>
 <ol>
 <li>flash 版本太低，请至少大于等于 11.4，低于此版本请提示更新 flash 版本</li>
