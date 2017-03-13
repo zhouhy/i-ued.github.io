@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+
+    
+    
+    
+  <url>
+    <loc>http://www.zhouhy.me/2017/02/23/jsmap/</loc>
+    <lastmod>2017-02-27T06:11:42.149Z</lastmod>
+    <data>
+        <display>
+        <title>JS自带map方法</title>
+        <pubTime>2017-02-23T06:54:47.000Z</pubTime>
+        
+        <tag>javascript</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+    
+    
+  <url>
+    <loc>http://www.zhouhy.me/2016/08/28/Web%20Uploader%E4%B8%8A%E4%BC%A0%E6%8C%89%E9%92%AE%E5%A4%B1%E6%95%88/</loc>
+    <lastmod>2017-02-24T07:55:26.066Z</lastmod>
+    <data>
+        <display>
+        <title>Web Uploader上传按钮失效</title>
+        <pubTime>2016-08-28T10:35:31.000Z</pubTime>
+        
+        <tag>插件</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.zhouhy.me/2016/08/30/%E8%A7%A3%E5%86%B3iframe%E7%AA%97%E4%BD%93%E4%B8%A2%E5%A4%B1Session%E6%97%B6%E7%99%BB%E5%BD%95%E7%AA%97%E5%8F%A3%E6%98%BE%E7%A4%BA%E5%9C%A8%E5%AD%90%E9%A1%B5%E9%9D%A2%E7%9A%84%E9%97%AE%E9%A2%98/</loc>
+    <lastmod>2017-02-24T07:55:16.698Z</lastmod>
+    <data>
+        <display>
+        <title>解决iframe窗体丢失Session时登录窗口显示在子页面的问题</title>
+        <pubTime>2016-08-30T01:10:31.000Z</pubTime>
+        
+        <tag>javascript</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+</urlset>
