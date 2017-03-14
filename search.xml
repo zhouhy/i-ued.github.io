@@ -4,6 +4,32 @@
   
     
     <entry>
+      <title><![CDATA[在GIT中增加忽略文件夹与文件]]></title>
+      <url>http://www.zhouhy.me/2017/03/14/%E5%9C%A8GIT%E4%B8%AD%E5%A2%9E%E5%8A%A0%E5%BF%BD%E7%95%A5%E6%96%87%E4%BB%B6%E5%A4%B9%E4%B8%8E%E6%96%87%E4%BB%B6/</url>
+      <content type="html"><![CDATA[<ol>
+<li>在工作目录中右键选择<br><img src="/img/GIT.jpg" alt=""></li>
+<li>输入touch .gitingore<br><br>这样在工作目录就生成了一个”.gitignore”文件</li>
+<li>然后在“.gitignore”里面写上你要忽略的文件夹与文件即可。例如：<br> .DS_Store<br>.idea/<br>module/build/</li>
+</ol>
+<hr>
+<p>注：如果文件已经提交到仓库了，那么就需要在缓存中将其清空：</p>
+<ol>
+<li>git rm -r –cached “要取消的目录”</li>
+<li>git commit -m “delete cached”<br><br>这样就OK了.</li>
+</ol>
+<p>在项目的根目录（.git文件夹所在目录同级）建立.gitignore，在里面声明即可。</p>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> GIT </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[JS自带map方法]]></title>
       <url>http://www.zhouhy.me/2017/02/23/jsmap/</url>
       <content type="html"><![CDATA[<ul>
