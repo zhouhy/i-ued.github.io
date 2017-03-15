@@ -291,6 +291,109 @@
             
               
                 
+                <a class="post-title-link" href="/2017/03/15/content-IE-edge-chrome-1详解/" itemprop="url">
+                  content="IE=edge,chrome"=1详解
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-03-15T14:06:48+08:00" content="2017-03-15">
+              2017-03-15
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/03/15/content-IE-edge-chrome-1详解/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/15/content-IE-edge-chrome-1详解/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p><code>&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge,chrome=1&quot; /&gt;</code><br>这个是IE的专用标记，来用指定IE浏览器去模拟某个特定版本的IE浏览器的渲染方式，以此来解决部分兼容问题，例如模拟IE7：<br><code>&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=EmulateIE7&quot; /&gt;</code><br>但另我好奇的是这个标记后面竟然出现了chrome这样的值，难道IE也可以模拟chrome了？<br>迅速搜索了一下，才明白原来不是微软增强了IE，而是google做了个外挂：google chrome frame(google内嵌浏览器框架GCF)。这个插件可以让用户的IE浏览器不变，但用户在浏览网页时，实际使用的是google chrome浏览器内核，而且支持IE6、7、8等多个版本的浏览器。<br>而上文提到的meta标记，则是在安装了GCF后，用来指定页面使用chrome内核来渲染。<br>GCF下载地址：<a href="http://code.google.com/intl/zh-CN/chrome/chromeframe/">http://code.google.com/intl/zh-CN/chrome/chromeframe/</a><br>安装完成后，如果你想对某个页面使用GCF进行渲染，只需要在该页面的地址前加上gcf:即可，例如：<br>gcf:htt[://cooleep.com<br>但是如果想要在开发时指定页面默认，首页使用gcf进行渲染，如果未安装GCF再使用IE内核进行渲染，该如何进行呢？就是使用这个标记。</p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2017/03/15/content-IE-edge-chrome-1详解/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2017/03/14/在hexo文章里插入图片/" itemprop="url">
                   在hexo文章里插入本地图片
                 </a>
@@ -849,7 +952,7 @@ function ready(){
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">5</span>
+              <span class="site-state-item-count">6</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -859,7 +962,7 @@ function ready(){
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title><![CDATA[content="IE=edge,chrome"=1详解]]></title>
+      <url>http://www.zhouhy.me/2017/03/15/content-IE-edge-chrome-1%E8%AF%A6%E8%A7%A3/</url>
+      <content type="html"><![CDATA[<p><code>&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge,chrome=1&quot; /&gt;</code><br>这个是IE的专用标记，来用指定IE浏览器去模拟某个特定版本的IE浏览器的渲染方式，以此来解决部分兼容问题，例如模拟IE7：<br><code>&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=EmulateIE7&quot; /&gt;</code><br>但另我好奇的是这个标记后面竟然出现了chrome这样的值，难道IE也可以模拟chrome了？<br>迅速搜索了一下，才明白原来不是微软增强了IE，而是google做了个外挂：google chrome frame(google内嵌浏览器框架GCF)。这个插件可以让用户的IE浏览器不变，但用户在浏览网页时，实际使用的是google chrome浏览器内核，而且支持IE6、7、8等多个版本的浏览器。<br>而上文提到的meta标记，则是在安装了GCF后，用来指定页面使用chrome内核来渲染。<br>GCF下载地址：<a href="http://code.google.com/intl/zh-CN/chrome/chromeframe/" target="_blank" rel="external">http://code.google.com/intl/zh-CN/chrome/chromeframe/</a><br>安装完成后，如果你想对某个页面使用GCF进行渲染，只需要在该页面的地址前加上gcf:即可，例如：<br>gcf:htt[://cooleep.com<br>但是如果想要在开发时指定页面默认，首页使用gcf进行渲染，如果未安装GCF再使用IE内核进行渲染，该如何进行呢？就是使用这个标记。</p>
+<a id="more"></a>
+<p>标记用法：<br>    阅读了chrome的开发文档(<a href="http://www.chromium.org/developers/how-tos/chrome-frame-getting-started" target="_blank" rel="external">http://www.chromium.org/developers/how-tos/chrome-frame-getting-started</a>),下面来简单了解一下这个标记的语法。<br>1.最基本的用法：在页面的头部加入：<br>    <code>&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;chrome=1&quot; /&gt;</code><br>用以声明当前页面使用chrome内核来渲染。复杂一些的就是本文一开始看到的那种方法，这样写可以达到的效果是如果安装了GCF，则使用GCF来渲染页面，如果未安装GCF，则使用最高版本的IE内核进行渲染。</p>
+<p>2.通过修改HTTP头文件的方法来实现指定的页面使用GCF内核来渲染：<br>在http的头文件中加入以下信息：<br>X-UA-Compatible:chrome=1<br>在Apache服务器中，确保mod_headers和mod_setenvif文件可用，然后在httpd.conf中加入以下配置信息：<br>&lt; IfModule mod_setenvif.c&gt;</p>
+<p>　　&lt; IfModule mod_headers.c&gt;</p>
+<p>　　BrowserMatch chromeframe gcf</p>
+<p>　　Header append X-UA-Compatible “chrome=1” env=gcf</p>
+<p>在IIS7或者更高版本的服务器中，只需要修改web.config文件,添加如下信息即可即可:<br>&lt; configuration &gt;</p>
+<p>　　&lt; system.webServer &gt;</p>
+<p>　　&lt; httpProtocol &gt;</p>
+<p>　　&lt; customHeaders &gt;</p>
+<p>　　&lt; add name = “X-UA-Compatible” value = “chrome=1” /&gt;</p>
+<p>　　system.webServer &gt;</p>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> HTML </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[在hexo文章里插入本地图片]]></title>
       <url>http://www.zhouhy.me/2017/03/14/%E5%9C%A8hexo%E6%96%87%E7%AB%A0%E9%87%8C%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/</url>
       <content type="html"><![CDATA[<p>用markdown写文章，插入图片的格式为：<code>![](){ImgCap}{/ImgCap}</code>,但图片路径从哪里来呢？<br>解决办法：<br>在/source文件夹下新建一个img文件夹，将图片放入img下面，图片链接地址为：/img/图片名称</p>
