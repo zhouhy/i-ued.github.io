@@ -4,6 +4,21 @@
   
     
     <entry>
+      <title><![CDATA[在hexo文章里插入本地图片]]></title>
+      <url>http://www.zhouhy.me/2017/03/14/%E5%9C%A8hexo%E6%96%87%E7%AB%A0%E9%87%8C%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/</url>
+      <content type="html"><![CDATA[<p>用markdown写文章，插入图片的格式为：<code>![](){ImgCap}{/ImgCap}</code>,但图片路径从哪里来呢？<br>解决办法：<br>在/source文件夹下新建一个img文件夹，将图片放入img下面，图片链接地址为：/img/图片名称</p>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> HEXO </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[在GIT中增加忽略文件夹与文件]]></title>
       <url>http://www.zhouhy.me/2017/03/14/%E5%9C%A8GIT%E4%B8%AD%E5%A2%9E%E5%8A%A0%E5%BF%BD%E7%95%A5%E6%96%87%E4%BB%B6%E5%A4%B9%E4%B8%8E%E6%96%87%E4%BB%B6/</url>
       <content type="html"><![CDATA[<ol>
@@ -17,7 +32,7 @@
 <li>git rm -r –cached “要取消的目录”</li>
 <li>git commit -m “delete cached”<br><br>这样就OK了.</li>
 </ol>
-<p>在项目的根目录（.git文件夹所在目录同级）建立.gitignore，在里面声明即可。</p>
+<p>PS:<strong>在项目的根目录（.git文件夹所在目录同级）建立.gitignore，在里面声明即可。</strong></p>
 ]]></content>
       
         
