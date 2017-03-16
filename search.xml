@@ -18,7 +18,8 @@
 <p>　　&lt; httpProtocol &gt;</p>
 <p>　　&lt; customHeaders &gt;</p>
 <p>　　&lt; add name = “X-UA-Compatible” value = “chrome=1” /&gt;</p>
-<p>　　system.webServer &gt;</p>
+<p>　　</p>
+<p>来自：<a href="http://blog.sina.com.cn/s/blog_a9e5c16d01011yly.html" target="_blank" rel="external">http://blog.sina.com.cn/s/blog_a9e5c16d01011yly.html</a></p>
 ]]></content>
       
         
