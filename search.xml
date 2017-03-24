@@ -4,6 +4,79 @@
   
     
     <entry>
+      <title><![CDATA[在webstorm中使用autoprefixer]]></title>
+      <url>http://www.zhouhy.me/2017/03/24/%E5%9C%A8webstorm%E4%B8%AD%E4%BD%BF%E7%94%A8autoprefixer/</url>
+      <content type="html"><![CDATA[<h1 id="关于Autoprefixer"><a href="#关于Autoprefixer" class="headerlink" title="关于Autoprefixer"></a>关于Autoprefixer</h1><hr>
+<p>Autoprefixer是一个后台处理程序，不像Sass以及Stylus之类的预处理器。它适用于普通的CSS，可以实现CSS3自动补全，也可以跟sass，less,及stylus集成，在CSS编译前或编译后运行。<br>附地址：<a href="https://github.com/postcss/autoprefixer" title="https://github.com/postcss/autoprefixer" target="_blank" rel="external">https://github.com/postcss/autoprefixer</a></p>
+<p>当Autoprefixer添加前缀到css,还不会忘记修复语法差异。</p>
+<pre><code>a{
+     background : linear-gradient(to top, black, white);
+     display : flex
+}
+
+::placeholder {
+     color : #ccc
+}
+</code></pre><p>编译成：</p>
+<pre><code>a {
+    background : -webkit-linear-gradient(bottom, black, white);
+    background : linear-gradient(to top, black, white);
+    display : -webkit-box;
+    display : -webkit-flex;
+    display : -moz-box;
+    display : -ms-flexbox;
+    display : flex
+}
+:-ms-input-placeholder {
+    color : #ccc
+}
+::-moz-placeholder {
+    color : #ccc
+}
+::-webkit-input-placeholder {
+    color : #ccc
+}
+::placeholder {
+    color : #ccc
+}
+</code></pre><p>Autoprefixer 同样会清理过期的前缀，因此下面的代码：</p>
+<pre><code>a {
+    -webkit-border-radius : 5px;
+    border-radius : 5px
+}
+</code></pre><p>编译成：</p>
+<pre><code>a {
+    border-radius : 5px
+}
+</code></pre><p>因为经过Autoprefixer处理，CSS将仅包含实际的浏览器前缀。<br><a id="more"></a></p>
+<h2 id="具体安装和配置："><a href="#具体安装和配置：" class="headerlink" title="具体安装和配置："></a>具体安装和配置：</h2><p>所以尝试在Webstorm下搜索autoprefixer插件，无果。那就自己手动配置了一个。首先我考虑配置File Watchers，但是不习惯，原来在sublime text下用autoprefixer都是手动触发的，所以后面我配置了External Tools。</p>
+<ol>
+<li>首先当然是安装node.js;</li>
+<li><p>安装Autoprefixer；</p>
+<p> <code>npm install autoprefixer -g</code></p>
+</li>
+<li><p>安装postcss-cli</p>
+<p> <code>npm install postcss-cli -g</code></p>
+</li>
+<li><p>配置External Tools<br>打开webstorm设置，工具集-外部工具，新增如图:<br><img src="/img/autoprefixer-1.jpg" alt=""></p>
+<p> 填写具体配置:<br> <img src="/img/autoprefixer-2.jpg" alt=""></p>
+<p> Program:填入你的postcss-cli 的PATH；<br> Parameters: -u autoprefixer -o $FileDir$/$FileName$  $FileDir$/$FileName$ ，你可以根据你自己的需要配置，具体参见<br> <a href="https://github.com/code42day/postcss-cli" title="https://github.com/code42day/postcss-cli" target="_blank" rel="external">https://github.com/code42day/postcss-cli</a><br> Working directory :$ProjectFileDir$</p>
+<p> 配置好后，你可以在css，或sass文件中右键，就可以在右键菜单中看到External Tools – autoprefixer</p>
+</li>
+<li>设置快捷键<br>打开Webstorm设置，Preferences -&gt; Keymap ， 搜索External Tools ， 配置 autoprefixer即可。</li>
+</ol>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> 工具插件 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[content="IE=edge,chrome"=1详解]]></title>
       <url>http://www.zhouhy.me/2017/03/15/content-IE-edge-chrome-1%E8%AF%A6%E8%A7%A3/</url>
       <content type="html"><![CDATA[<p><code>&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge,chrome=1&quot; /&gt;</code><br>这个是IE的专用标记，来用指定IE浏览器去模拟某个特定版本的IE浏览器的渲染方式，以此来解决部分兼容问题，例如模拟IE7：<br><code>&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=EmulateIE7&quot; /&gt;</code><br>但另我好奇的是这个标记后面竟然出现了chrome这样的值，难道IE也可以模拟chrome了？<br>迅速搜索了一下，才明白原来不是微软增强了IE，而是google做了个外挂：google chrome frame(google内嵌浏览器框架GCF)。这个插件可以让用户的IE浏览器不变，但用户在浏览网页时，实际使用的是google chrome浏览器内核，而且支持IE6、7、8等多个版本的浏览器。<br>而上文提到的meta标记，则是在安装了GCF后，用来指定页面使用chrome内核来渲染。<br>GCF下载地址：<a href="http://code.google.com/intl/zh-CN/chrome/chromeframe/" target="_blank" rel="external">http://code.google.com/intl/zh-CN/chrome/chromeframe/</a><br>安装完成后，如果你想对某个页面使用GCF进行渲染，只需要在该页面的地址前加上gcf:即可，例如：<br>gcf:htt[://cooleep.com<br>但是如果想要在开发时指定页面默认，首页使用gcf进行渲染，如果未安装GCF再使用IE内核进行渲染，该如何进行呢？就是使用这个标记。</p>
