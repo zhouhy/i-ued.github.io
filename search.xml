@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title><![CDATA[WebStorm无法显示文件夹目录]]></title>
+      <url>http://www.zhouhy.me/2017/04/14/WebStorm%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA%E6%96%87%E4%BB%B6%E5%A4%B9%E7%9B%AE%E5%BD%95/</url>
+      <content type="html"><![CDATA[<p>在做项目的时候webstorm打开项目时偶尔会遇到显示不了文件夹，出现这个原因主要是因为配置文件（.idea里的modules.xml）损坏。解决方法：</p>
+<ol>
+<li>删除webstorm的配置文件.idea</li>
+<li>重新打开该项目</li>
+</ol>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> 工具插 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[在webstorm中使用autoprefixer]]></title>
       <url>http://www.zhouhy.me/2017/03/24/%E5%9C%A8webstorm%E4%B8%AD%E4%BD%BF%E7%94%A8autoprefixer/</url>
       <content type="html"><![CDATA[<h1 id="关于Autoprefixer"><a href="#关于Autoprefixer" class="headerlink" title="关于Autoprefixer"></a>关于Autoprefixer</h1><hr>
