@@ -4,6 +4,41 @@
   
     
     <entry>
+      <title><![CDATA[Node.js中日志管理模块使用]]></title>
+      <url>http://www.zhouhy.me/2017/04/25/Node-js%E4%B8%AD%E6%97%A5%E5%BF%97%E7%AE%A1%E7%90%86%E6%A8%A1%E5%9D%97%E4%BD%BF%E7%94%A8/</url>
+      <content type="html"><![CDATA[<p>在开发过程中，日志记录是必不可少的，尤其是生产系统中经常无法调试，日志就成了重要的调试信息来源。<br>Node.js的日志模块是log4js,源码：<a href="https://github.com/nomiddlename/log4js-node" title="https://github.com/nomiddlename/log4js-node" target="_blank" rel="external">https://github.com/nomiddlename/log4js-node</a></p>
+<p>项目引用：npm install log4js</p>
+<p>1.配置</p>
+<pre><code>log4js.configure({
+appenders:[{
+    {type:&quot;console&quot;,&quot;category&quot;:&quot;console&quot;},//将日志输出到控制台，方便我们在开发时看到日志信息
+    {
+        &quot;type&quot;:&quot;dateFile&quot;,//日志文件类型，可以使用日期作为文件名的点位符
+        &quot;filename&quot;:&quot;E:/website/logs/&quot;,//日志文件名，可以设置相对路径或绝对路径
+        &quot;pattern&quot;:&quot;debug/yyyyMMddhh.txt&quot;，//占们符，紧跟filename后
+        &quot;absolute&quot;:true,//文件名是否绝对路径
+        &quot;alwaysIncludePattern&quot;:true，//文件名是否包含占位符
+        &quot;category&quot;:&quot;logInfo&quot;//记录器名
+    }
+}]
+})
+</code></pre><p>pattern 可以使用占位符说明，不属于下列占位符格式，均原样输入文件名：<br>yy    两位年份<br>yyyy  四位年份<br>MM    两位月份<br>dd    两位日期<br>hh    两位的小时数，按24小时算<br>mm    两位的分数<br>ss    两位的秒数</p>
+<p>2.代码调用</p>
+<pre><code>var logger = require(&apos;./utils/logger&apos;);
+logger.info(&apos;记录一下日志&apos;);
+</code></pre><p>输出的log有六个level,每个level输出到终端时会使用不同的颜色，分别是：<br>trace：    蓝色<br>debug:    青色<br>info:    绿色<br>warn:    黄色<br>error:    红色<br>fatal:    粉色</p>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> Node </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[WebStorm无法显示文件夹目录]]></title>
       <url>http://www.zhouhy.me/2017/04/14/WebStorm%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA%E6%96%87%E4%BB%B6%E5%A4%B9%E7%9B%AE%E5%BD%95/</url>
       <content type="html"><![CDATA[<p>在做项目的时候webstorm打开项目时偶尔会遇到显示不了文件夹，出现这个原因主要是因为配置文件（.idea里的modules.xml）损坏。解决方法：</p>

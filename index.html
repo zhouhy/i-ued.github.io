@@ -86,12 +86,15 @@
 
 
 
+<meta name="description" content="所有的可以岁月静好，都是有人为你负重前行。">
 <meta property="og:type" content="website">
 <meta property="og:title" content="晨曦雨梦">
 <meta property="og:url" content="http://www.zhouhy.me/index.html">
 <meta property="og:site_name" content="晨曦雨梦">
+<meta property="og:description" content="所有的可以岁月静好，都是有人为你负重前行。">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="晨曦雨梦">
+<meta name="twitter:description" content="所有的可以岁月静好，都是有人为你负重前行。">
 
 
 
@@ -269,6 +272,127 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/04/25/Node-js中日志管理模块使用/" itemprop="url">
+                  Node.js中日志管理模块使用
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-04-25T14:47:25+08:00" content="2017-04-25">
+              2017-04-25
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/04/25/Node-js中日志管理模块使用/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/04/25/Node-js中日志管理模块使用/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>在开发过程中，日志记录是必不可少的，尤其是生产系统中经常无法调试，日志就成了重要的调试信息来源。<br>Node.js的日志模块是log4js,源码：<a href="https://github.com/nomiddlename/log4js-node" title="https://github.com/nomiddlename/log4js-node" target="_blank" rel="external">https://github.com/nomiddlename/log4js-node</a></p>
+<p>项目引用：npm install log4js</p>
+<p>1.配置</p>
+<pre><code>log4js.configure({
+appenders:[{
+    {type:&quot;console&quot;,&quot;category&quot;:&quot;console&quot;},//将日志输出到控制台，方便我们在开发时看到日志信息
+    {
+        &quot;type&quot;:&quot;dateFile&quot;,//日志文件类型，可以使用日期作为文件名的点位符
+        &quot;filename&quot;:&quot;E:/website/logs/&quot;,//日志文件名，可以设置相对路径或绝对路径
+        &quot;pattern&quot;:&quot;debug/yyyyMMddhh.txt&quot;，//占们符，紧跟filename后
+        &quot;absolute&quot;:true,//文件名是否绝对路径
+        &quot;alwaysIncludePattern&quot;:true，//文件名是否包含占位符
+        &quot;category&quot;:&quot;logInfo&quot;//记录器名
+    }
+}]
+})
+</code></pre><p>pattern 可以使用占位符说明，不属于下列占位符格式，均原样输入文件名：<br>yy    两位年份<br>yyyy  四位年份<br>MM    两位月份<br>dd    两位日期<br>hh    两位的小时数，按24小时算<br>mm    两位的分数<br>ss    两位的秒数</p>
+<p>2.代码调用</p>
+<pre><code>var logger = require(&apos;./utils/logger&apos;);
+logger.info(&apos;记录一下日志&apos;);
+</code></pre><p>输出的log有六个level,每个level输出到终端时会使用不同的颜色，分别是：<br>trace：    蓝色<br>debug:    青色<br>info:    绿色<br>warn:    黄色<br>error:    红色<br>fatal:    粉色</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
     
       
 
@@ -1197,12 +1321,12 @@ function ready(){
                src="/images/avatar.gif"
                alt="晨曦雨梦" />
           <p class="site-author-name" itemprop="name">晨曦雨梦</p>
-          <p class="site-description motion-element" itemprop="description"></p>
+          <p class="site-description motion-element" itemprop="description">所有的可以岁月静好，都是有人为你负重前行。</p>
         </div>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">8</span>
+              <span class="site-state-item-count">9</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
