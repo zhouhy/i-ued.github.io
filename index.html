@@ -294,6 +294,108 @@
             
               
                 
+                <a class="post-title-link" href="/2017/06/01/Vue-报错Cannot-assign-to-read-only-property-exports-of-object-Object/" itemprop="url">
+                  Vue 报错Cannot assign to read only property 'exports' of object '#<Object>'
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-06-01T10:47:42+08:00" content="2017-06-01">
+              2017-06-01
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/06/01/Vue-报错Cannot-assign-to-read-only-property-exports-of-object-Object/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/06/01/Vue-报错Cannot-assign-to-read-only-property-exports-of-object-Object/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>今天在项目里遇到一个错误，<br>    <code>Uncaught TypeError: Cannot assign to read only property &#39;exports&#39; of object &#39;#Object&#39; at Object.anonymous</code></p>
+<p>网上搜了一下，是因为webpack中，不允许混用import 和 module.exports，但是可以混用require和export.<br>最终解决方法是统一改成ES6写法.</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2017/05/27/git常用命令速查表/" itemprop="url">
                   git常用命令速查表
                 </a>
@@ -1320,114 +1422,6 @@ var a = map.call(&quot;hello world&quot;,function(x){
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/08/30/解决iframe窗体丢失Session时登录窗口显示在子页面的问题/" itemprop="url">
-                  解决iframe窗体丢失Session时登录窗口显示在子页面的问题
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-08-30T09:10:31+08:00" content="2016-08-30">
-              2016-08-30
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/08/30/解决iframe窗体丢失Session时登录窗口显示在子页面的问题/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/30/解决iframe窗体丢失Session时登录窗口显示在子页面的问题/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>若在项目是应该了iframe的朋友也许会碰到与我一样的问题。当窗体Sessoin丢失后登录的窗体在显示在iframe的主窗口中，这还不算，更糟的是登录后，又多出来了一个iframe。真有点伤脑筋。呵呵，今天特意找了一下资料，希望对大家有所帮助，解决方法其实很简单。代码如下：</p>
-<pre><code>//在登录页面的onload中调用如下方法：
-function ready(){
-    if(top.location!=self.location)
-    {
-        top.location=self.location;
-    }
-}
-</code></pre>
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1473,7 +1467,7 @@ function ready(){
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">12</span>
+              <span class="site-state-item-count">13</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1483,7 +1477,7 @@ function ready(){
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

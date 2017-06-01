@@ -4,6 +4,22 @@
   
     
     <entry>
+      <title><![CDATA[Vue 报错Cannot assign to read only property 'exports' of object '#<Object>']]></title>
+      <url>http://www.zhouhy.me/2017/06/01/Vue-%E6%8A%A5%E9%94%99Cannot-assign-to-read-only-property-exports-of-object-Object/</url>
+      <content type="html"><![CDATA[<p>今天在项目里遇到一个错误，<br>    <code>Uncaught TypeError: Cannot assign to read only property &#39;exports&#39; of object &#39;#Object&#39; at Object.anonymous</code></p>
+<p>网上搜了一下，是因为webpack中，不允许混用import 和 module.exports，但是可以混用require和export.<br>最终解决方法是统一改成ES6写法.</p>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> VUE </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[git常用命令速查表]]></title>
       <url>http://www.zhouhy.me/2017/05/27/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5%E8%A1%A8/</url>
       <content type="html"><![CDATA[<pre><code>master: 默认开发分支            HEAD：默认开发分支 
