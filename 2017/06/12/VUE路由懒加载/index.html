@@ -70,7 +70,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="VUE," />
 
 
 
@@ -86,15 +86,28 @@
 
 
 
-<meta name="description" content="所有的可以岁月静好，都是有人为你负重前行。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="晨曦雨梦">
-<meta property="og:url" content="http://www.zhouhy.me/tags/HEXO/index.html">
+<meta name="description" content="当打包构建应用时，Javascript包会变得非常大，影响页面加载。如果我们能把不同路由对应的组件分割成不同的代码块，然后当路由被访问的时候才加载对应组件，这样就更高效了。
+结合Vue的异步组件和webpack的code spiltting feature，轻松实现路由组件的懒加载。
+我们要做的就是把路由对应的组件定义成异步组件：
+const Foo = resolve =&amp;gt; {
+    /">
+<meta property="og:type" content="article">
+<meta property="og:title" content="VUE路由懒加载">
+<meta property="og:url" content="http://www.zhouhy.me/2017/06/12/VUE路由懒加载/index.html">
 <meta property="og:site_name" content="晨曦雨梦">
-<meta property="og:description" content="所有的可以岁月静好，都是有人为你负重前行。">
+<meta property="og:description" content="当打包构建应用时，Javascript包会变得非常大，影响页面加载。如果我们能把不同路由对应的组件分割成不同的代码块，然后当路由被访问的时候才加载对应组件，这样就更高效了。
+结合Vue的异步组件和webpack的code spiltting feature，轻松实现路由组件的懒加载。
+我们要做的就是把路由对应的组件定义成异步组件：
+const Foo = resolve =&amp;gt; {
+    /">
+<meta property="og:updated_time" content="2017-06-12T09:41:02.952Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="晨曦雨梦">
-<meta name="twitter:description" content="所有的可以岁月静好，都是有人为你负重前行。">
+<meta name="twitter:title" content="VUE路由懒加载">
+<meta name="twitter:description" content="当打包构建应用时，Javascript包会变得非常大，影响页面加载。如果我们能把不同路由对应的组件分割成不同的代码块，然后当路由被访问的时候才加载对应组件，这样就更高效了。
+结合Vue的异步组件和webpack的code spiltting feature，轻松实现路由组件的懒加载。
+我们要做的就是把路由对应的组件定义成异步组件：
+const Foo = resolve =&amp;gt; {
+    /">
 
 
 
@@ -115,9 +128,9 @@
 
 
 
-  <link rel="canonical" href="http://www.zhouhy.me/tags/HEXO/"/>
+  <link rel="canonical" href="http://www.zhouhy.me/2017/06/12/VUE路由懒加载/"/>
 
-  <title> 标签: HEXO | 晨曦雨梦 </title>
+  <title> VUE路由懒加载 | 晨曦雨梦 </title>
  
 </head>
 
@@ -149,7 +162,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -270,46 +283,152 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-collapse">
-    <div class="collection-title">
-      <h2 >
-        HEXO
-        <small>标签</small>
-      </h2>
-    </div>
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
 
     
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                VUE路由懒加载
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-06-12T17:12:14+08:00" content="2017-06-12">
+              2017-06-12
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/06/12/VUE路由懒加载/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/06/12/VUE路由懒加载/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
       
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+      
+        <p>当打包构建应用时，Javascript包会变得非常大，影响页面加载。如果我们能把不同路由对应的组件分割成不同的代码块，然后当路由被访问的时候才加载对应组件，这样就更高效了。</p>
+<p>结合Vue的异步组件和webpack的code spiltting feature，轻松实现路由组件的懒加载。</p>
+<p>我们要做的就是把路由对应的组件定义成异步组件：</p>
+<pre><code>const Foo = resolve =&gt; {
+    //require.ensure是webpack的特殊语法，用来设置code-split point
+    //（代码分块）
+    require.ensure([&apos;./Foo.vue&apos;],()=&gt;{
+        resolve(require(&apos;./Foo.vue));
+    })
+}
+</code></pre><p>这里还有另外一种代码分块的语法，使用AMD风格的require，于是就更简单了：</p>
+<pre><code>const Foo = resolve =&gt; require([&apos;./Foo.vue&apos;],resovle);
+</code></pre><p>不需要改变任何路由配置，跟之前一样使用Foo:</p>
+<pre><code>const router = new VueRouter({
+    routes:[
+        {path: &apos;/foo&apos;,component:Foo}
+    ]
+})
+</code></pre><h1 id="把组件按组分块"><a href="#把组件按组分块" class="headerlink" title="把组件按组分块"></a>把组件按组分块</h1><p>有时候我们想把某个路由下的所有组件都打包在同个异步chunk中，只需要给chunk命名，提供requrie.ensure，第三个参数作为chunk的名称：</p>
+<pre><code>const Foo = r =&gt; require.ensure([],()=&gt;r(require(&apos;./Foo.vue&apos;)),&apos;group-foo&apos;);
+const Bar = r =&gt; require.ensure([],()=&gt;r(require(&apos;./Bar.vue&apos;)),&apos;group-foo&apos;);
+const Baz = r =&gt; require.ensure([],()=&gt;r(require(&apos;./Baz.vue&apos;)),&apos;group-foo&apos;);
+</code></pre><p>webpack将相同chunk下的所有异步模块打包到一个异步块里面–这也意味着我们无须明确列出require.ensure的依赖（传空数组就行）。</p>
+<p>转自：<a href="https://router.vuejs.org/zh-cn/advanced/lazy-loading.html" title="https://router.vuejs.org/zh-cn/advanced/lazy-loading.html" target="_blank" rel="external">https://router.vuejs.org/zh-cn/advanced/lazy-loading.html</a></p>
 
-      <h1 class="post-title">
+      
+    </div>
+
+    <div>
+      
         
-            <a class="post-title-link" href="/2017/03/14/在hexo文章里插入图片/" itemprop="url">
-              
-                <span itemprop="name">在hexo文章里插入本地图片</span>
-              
-            </a>
+
+      
+    </div>
+
+    <div>
+      
         
-      </h1>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-03-14T16:06:38+08:00"
-              content="2017-03-14" >
-          03-14
-        </time>
-      </div>
+      
+    </div>
 
-    </header>
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/VUE/" rel="tag">#VUE</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/06/01/Vue-报错Cannot-assign-to-read-only-property-exports-of-object-Object/" rel="next" title="Vue 报错Cannot assign to read only property 'exports' of object '#<Object>'">
+                <i class="fa fa-chevron-left"></i> Vue 报错Cannot assign to read only property 'exports' of object '#<Object>'
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </article>
 
 
-    
-  </div>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -317,6 +436,14 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2017/06/12/VUE路由懒加载/"
+           data-title="VUE路由懒加载" data-url="http://www.zhouhy.me/2017/06/12/VUE路由懒加载/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -336,8 +463,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -400,6 +536,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#把组件按组分块"><span class="nav-number">1.</span> <span class="nav-text">把组件按组分块</span></a></li></ol></div>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -509,6 +656,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
 
   
 

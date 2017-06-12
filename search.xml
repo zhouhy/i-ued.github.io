@@ -4,6 +4,44 @@
   
     
     <entry>
+      <title><![CDATA[VUE路由懒加载]]></title>
+      <url>http://www.zhouhy.me/2017/06/12/VUE%E8%B7%AF%E7%94%B1%E6%87%92%E5%8A%A0%E8%BD%BD/</url>
+      <content type="html"><![CDATA[<p>当打包构建应用时，Javascript包会变得非常大，影响页面加载。如果我们能把不同路由对应的组件分割成不同的代码块，然后当路由被访问的时候才加载对应组件，这样就更高效了。</p>
+<p>结合Vue的异步组件和webpack的code spiltting feature，轻松实现路由组件的懒加载。</p>
+<p>我们要做的就是把路由对应的组件定义成异步组件：</p>
+<pre><code>const Foo = resolve =&gt; {
+    //require.ensure是webpack的特殊语法，用来设置code-split point
+    //（代码分块）
+    require.ensure([&apos;./Foo.vue&apos;],()=&gt;{
+        resolve(require(&apos;./Foo.vue));
+    })
+}
+</code></pre><p>这里还有另外一种代码分块的语法，使用AMD风格的require，于是就更简单了：</p>
+<pre><code>const Foo = resolve =&gt; require([&apos;./Foo.vue&apos;],resovle);
+</code></pre><p>不需要改变任何路由配置，跟之前一样使用Foo:</p>
+<pre><code>const router = new VueRouter({
+    routes:[
+        {path: &apos;/foo&apos;,component:Foo}
+    ]
+})
+</code></pre><h1 id="把组件按组分块"><a href="#把组件按组分块" class="headerlink" title="把组件按组分块"></a>把组件按组分块</h1><p>有时候我们想把某个路由下的所有组件都打包在同个异步chunk中，只需要给chunk命名，提供requrie.ensure，第三个参数作为chunk的名称：</p>
+<pre><code>const Foo = r =&gt; require.ensure([],()=&gt;r(require(&apos;./Foo.vue&apos;)),&apos;group-foo&apos;);
+const Bar = r =&gt; require.ensure([],()=&gt;r(require(&apos;./Bar.vue&apos;)),&apos;group-foo&apos;);
+const Baz = r =&gt; require.ensure([],()=&gt;r(require(&apos;./Baz.vue&apos;)),&apos;group-foo&apos;);
+</code></pre><p>webpack将相同chunk下的所有异步模块打包到一个异步块里面–这也意味着我们无须明确列出require.ensure的依赖（传空数组就行）。</p>
+<p>转自：<a href="https://router.vuejs.org/zh-cn/advanced/lazy-loading.html" title="https://router.vuejs.org/zh-cn/advanced/lazy-loading.html" target="_blank" rel="external">https://router.vuejs.org/zh-cn/advanced/lazy-loading.html</a></p>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> VUE </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[Vue 报错Cannot assign to read only property 'exports' of object '#<Object>']]></title>
       <url>http://www.zhouhy.me/2017/06/01/Vue-%E6%8A%A5%E9%94%99Cannot-assign-to-read-only-property-exports-of-object-Object/</url>
       <content type="html"><![CDATA[<p>今天在项目里遇到一个错误，<br>    <code>Uncaught TypeError: Cannot assign to read only property &#39;exports&#39; of object &#39;#Object&#39; at Object.anonymous</code></p>

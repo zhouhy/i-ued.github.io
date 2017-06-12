@@ -294,6 +294,130 @@
             
               
                 
+                <a class="post-title-link" href="/2017/06/12/VUE路由懒加载/" itemprop="url">
+                  VUE路由懒加载
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-06-12T17:12:14+08:00" content="2017-06-12">
+              2017-06-12
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/06/12/VUE路由懒加载/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/06/12/VUE路由懒加载/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>当打包构建应用时，Javascript包会变得非常大，影响页面加载。如果我们能把不同路由对应的组件分割成不同的代码块，然后当路由被访问的时候才加载对应组件，这样就更高效了。</p>
+<p>结合Vue的异步组件和webpack的code spiltting feature，轻松实现路由组件的懒加载。</p>
+<p>我们要做的就是把路由对应的组件定义成异步组件：</p>
+<pre><code>const Foo = resolve =&gt; {
+    //require.ensure是webpack的特殊语法，用来设置code-split point
+    //（代码分块）
+    require.ensure([&apos;./Foo.vue&apos;],()=&gt;{
+        resolve(require(&apos;./Foo.vue));
+    })
+}
+</code></pre><p>这里还有另外一种代码分块的语法，使用AMD风格的require，于是就更简单了：</p>
+<pre><code>const Foo = resolve =&gt; require([&apos;./Foo.vue&apos;],resovle);
+</code></pre><p>不需要改变任何路由配置，跟之前一样使用Foo:</p>
+<pre><code>const router = new VueRouter({
+    routes:[
+        {path: &apos;/foo&apos;,component:Foo}
+    ]
+})
+</code></pre><h1 id="把组件按组分块"><a href="#把组件按组分块" class="headerlink" title="把组件按组分块"></a>把组件按组分块</h1><p>有时候我们想把某个路由下的所有组件都打包在同个异步chunk中，只需要给chunk命名，提供requrie.ensure，第三个参数作为chunk的名称：</p>
+<pre><code>const Foo = r =&gt; require.ensure([],()=&gt;r(require(&apos;./Foo.vue&apos;)),&apos;group-foo&apos;);
+const Bar = r =&gt; require.ensure([],()=&gt;r(require(&apos;./Bar.vue&apos;)),&apos;group-foo&apos;);
+const Baz = r =&gt; require.ensure([],()=&gt;r(require(&apos;./Baz.vue&apos;)),&apos;group-foo&apos;);
+</code></pre><p>webpack将相同chunk下的所有异步模块打包到一个异步块里面–这也意味着我们无须明确列出require.ensure的依赖（传空数组就行）。</p>
+<p>转自：<a href="https://router.vuejs.org/zh-cn/advanced/lazy-loading.html" title="https://router.vuejs.org/zh-cn/advanced/lazy-loading.html" target="_blank" rel="external">https://router.vuejs.org/zh-cn/advanced/lazy-loading.html</a></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2017/06/01/Vue-报错Cannot-assign-to-read-only-property-exports-of-object-Object/" itemprop="url">
                   Vue 报错Cannot assign to read only property 'exports' of object '#<Object>'
                 </a>
@@ -1312,116 +1436,6 @@ logger.info(&apos;记录一下日志&apos;);
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/02/23/jsmap/" itemprop="url">
-                  JS自带map方法
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-02-23T14:54:47+08:00" content="2017-02-23">
-              2017-02-23
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2017/02/23/jsmap/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/02/23/jsmap/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <ul>
-<li>方法概述：<br /><br>map()  返回一个由原数组中的每个元素调用一个指定方法后的返回值组成的新数组。</li>
-<li>例子<Br><br>1.在字符串中使用map<br><br> 在一个string上使用map获取字符串中每个字符所对应的ASCII码组成的数组：<br> <pre><code>var map = Array.prototype.map; 
-var a = map.call(&quot;hello world&quot;,function(x){  
-    return x.charCodeAt(0);  
-});  
-//a的值【72，101，108，108，111，32，87，111，114，108，100】
-</code></pre>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2017/02/23/jsmap/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1467,7 +1481,7 @@ var a = map.call(&quot;hello world&quot;,function(x){
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">13</span>
+              <span class="site-state-item-count">14</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
