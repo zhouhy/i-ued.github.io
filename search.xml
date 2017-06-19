@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title><![CDATA[HTML5新增标签属性]]></title>
+      <url>http://www.zhouhy.me/2017/06/13/HTML5%E6%96%B0%E5%A2%9E%E6%A0%87%E7%AD%BE%E5%B1%9E%E6%80%A7/</url>
+      <content type="html"><![CDATA[<ol>
+<li><p>contextmenu:右键菜单<br> `<div id="div1" style="height:900px; background: lightgreen;" contextmenu="menuShare"></div><br> <menu id="menuShare" type="context"></menu></p>
+<pre><code>&lt;menuitem label=&quot;分享到QQ空间&quot; onclick=&quot;alert(&apos;QQ&apos;);&quot;&gt;&lt;/menuitem&gt;
+&lt;menuitem label=&quot;分享到朋友圈&quot; onclick=&quot;alert(&apos;朋友圈&apos;);&quot;&gt;&lt;/menuitem&gt;
+&lt;menuitem label=&quot;分享到微博&quot; onclick=&quot;alert(&apos;微博&apos;);&quot;&gt;&lt;/menuitem&gt;
+</code></pre><p> `</p>
+</li>
+<li><p>menu:定义菜单<br>menu属性：type：菜单类型属性，有三个值<br> 1) context：上下文<br> 2) toolbar:工具栏<br> 3) list:列表<br> menu内部还可以嵌入一个菜单项，即：menuitem<br> menuitem属性：</p>
+<pre><code>label：菜单项显示的名称
+icon:在菜单项左侧显示的图标
+onclick：点击菜单项触发的事件
+</code></pre></li>
+</ol>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> HTML </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[VUE路由懒加载]]></title>
       <url>http://www.zhouhy.me/2017/06/12/VUE%E8%B7%AF%E7%94%B1%E6%87%92%E5%8A%A0%E8%BD%BD/</url>
       <content type="html"><![CDATA[<p>当打包构建应用时，Javascript包会变得非常大，影响页面加载。如果我们能把不同路由对应的组件分割成不同的代码块，然后当路由被访问的时候才加载对应组件，这样就更高效了。</p>
@@ -316,7 +343,7 @@ logger.info(&apos;记录一下日志&apos;);
 <hr>
 <p>注：如果文件已经提交到仓库了，那么就需要在缓存中将其清空：</p>
 <ol>
-<li>git rm -r –cached “要取消的目录”</li>
+<li>git rm -r - -cached “要取消的目录”</li>
 <li>git commit -m “delete cached”<br><br>这样就OK了.</li>
 </ol>
 <p>PS:<strong>在项目的根目录（.git文件夹所在目录同级）建立.gitignore，在里面声明即可。</strong></p>

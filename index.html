@@ -294,6 +294,119 @@
             
               
                 
+                <a class="post-title-link" href="/2017/06/13/HTML5新增标签属性/" itemprop="url">
+                  HTML5新增标签属性
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-06-13T10:20:31+08:00" content="2017-06-13">
+              2017-06-13
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/06/13/HTML5新增标签属性/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/06/13/HTML5新增标签属性/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <ol>
+<li><p>contextmenu:右键菜单<br> `<div id="div1" style="height:900px; background: lightgreen;" contextmenu="menuShare"></div><br> <menu id="menuShare" type="context"></menu></p>
+<pre><code>&lt;menuitem label=&quot;分享到QQ空间&quot; onclick=&quot;alert(&apos;QQ&apos;);&quot;&gt;&lt;/menuitem&gt;
+&lt;menuitem label=&quot;分享到朋友圈&quot; onclick=&quot;alert(&apos;朋友圈&apos;);&quot;&gt;&lt;/menuitem&gt;
+&lt;menuitem label=&quot;分享到微博&quot; onclick=&quot;alert(&apos;微博&apos;);&quot;&gt;&lt;/menuitem&gt;
+</code></pre><p> `</p>
+</li>
+<li><p>menu:定义菜单<br>menu属性：type：菜单类型属性，有三个值<br> 1) context：上下文<br> 2) toolbar:工具栏<br> 3) list:列表<br> menu内部还可以嵌入一个菜单项，即：menuitem<br> menuitem属性：</p>
+<pre><code>label：菜单项显示的名称
+icon:在菜单项左侧显示的图标
+onclick：点击菜单项触发的事件
+</code></pre></li>
+</ol>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2017/06/12/VUE路由懒加载/" itemprop="url">
                   VUE路由懒加载
                 </a>
@@ -1324,118 +1437,6 @@ logger.info(&apos;记录一下日志&apos;);
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/03/14/在GIT中增加忽略文件夹与文件/" itemprop="url">
-                  在GIT中增加忽略文件夹与文件
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-03-14T15:42:28+08:00" content="2017-03-14">
-              2017-03-14
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2017/03/14/在GIT中增加忽略文件夹与文件/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/14/在GIT中增加忽略文件夹与文件/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <ol>
-<li>在工作目录中右键选择<br><img src="/img/GIT.jpg" alt=""></li>
-<li>输入touch .gitingore<br><br>这样在工作目录就生成了一个”.gitignore”文件</li>
-<li>然后在“.gitignore”里面写上你要忽略的文件夹与文件即可。例如：<br> .DS_Store<br>.idea/<br>module/build/</li>
-</ol>
-<hr>
-<p>注：如果文件已经提交到仓库了，那么就需要在缓存中将其清空：</p>
-<ol>
-<li>git rm -r –cached “要取消的目录”</li>
-<li>git commit -m “delete cached”<br><br>这样就OK了.</li>
-</ol>
-<p>PS:<strong>在项目的根目录（.git文件夹所在目录同级）建立.gitignore，在里面声明即可。</strong></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1481,7 +1482,7 @@ logger.info(&apos;记录一下日志&apos;);
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">15</span>
+              <span class="site-state-item-count">16</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
