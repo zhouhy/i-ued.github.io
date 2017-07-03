@@ -4,15 +4,57 @@
   
     
     <entry>
+      <title><![CDATA[去除html带标签正则]]></title>
+      <url>http://www.zhouhy.me/2017/07/03/%E5%8E%BB%E9%99%A4html%E5%B8%A6%E6%A0%87%E7%AD%BE%E6%AD%A3%E5%88%99/</url>
+      <content type="html"><![CDATA[<pre><code>re=/&lt;[^&lt;&gt;]+&gt;/g
+</code></pre>]]></content>
+      
+        
+        <tags>
+            
+            <tag> JAVASCRIPT </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Git Bash记住用户名密码]]></title>
+      <url>http://www.zhouhy.me/2017/06/30/Git-Bash%E8%AE%B0%E4%BD%8F%E7%94%A8%E6%88%B7%E5%90%8D%E5%AF%86%E7%A0%81/</url>
+      <content type="html"><![CDATA[<p>Git form windows 如何记住用户名密码<br>每次用命令push代码的时候都需要输入用户名和密码，实在是太麻烦了，百度一下，找到解决办法：<br>先创建存储用户名密码的文件，在home文件夹，一般是在C:\Documents and Settings\Administrator下建立文件.git-credentials(windows下不允许直接创建以.开关的文件，所以有一个小技巧：先创建一个文件名为git-credentials的文件，然后进入git bash)使用命令：<br>    mv git - - credentials .git-credentials</p>
+<p>用记事本打开这个文件输入，如果用户名中有@，那么使用%代替：</p>
+<pre><code>https://{{username}}:{{password}}@gitgub.com
+</code></pre><p>例：<a href="https://zhouhy:123456@github.com" target="_blank" rel="external">https://zhouhy:123456@github.com</a><br>保存；</p>
+<p>进入git bash ，然后输入：</p>
+<pre><code>git config - -global credential.helper store
+</code></pre><p>执行完后去查看 C:\Documents and Settings\Administrator.gitconfig 这个文件，发现多了一项：</p>
+<pre><code>[credential] 
+helper = store
+</code></pre><p>就成功了。</p>
+<p>然后要重开 git bash 窗口，再push就不用输入用户名密码</p>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> GIT </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[HTML5新增标签属性]]></title>
       <url>http://www.zhouhy.me/2017/06/13/HTML5%E6%96%B0%E5%A2%9E%E6%A0%87%E7%AD%BE%E5%B1%9E%E6%80%A7/</url>
       <content type="html"><![CDATA[<ol>
-<li><p>contextmenu:右键菜单<br> `<div id="div1" style="height:900px; background: lightgreen;" contextmenu="menuShare"></div><br> <menu id="menuShare" type="context"></menu></p>
-<pre><code>&lt;menuitem label=&quot;分享到QQ空间&quot; onclick=&quot;alert(&apos;QQ&apos;);&quot;&gt;&lt;/menuitem&gt;
-&lt;menuitem label=&quot;分享到朋友圈&quot; onclick=&quot;alert(&apos;朋友圈&apos;);&quot;&gt;&lt;/menuitem&gt;
-&lt;menuitem label=&quot;分享到微博&quot; onclick=&quot;alert(&apos;微博&apos;);&quot;&gt;&lt;/menuitem&gt;
-</code></pre><p> `</p>
-</li>
+<li><p>contextmenu:右键菜单</p>
+<pre><code>&lt;div id=&quot;div1&quot; style=&quot;height:50px; background: lightgreen;&quot; contextmenu=&quot;menuShare&quot;&gt;&lt;/div&gt;
+&lt;menu id=&quot;menuShare&quot; type=&quot;context&quot;&gt;
+    &lt;menuitem label=&quot;分享到QQ空间&quot; onclick=&quot;alert(&apos;QQ&apos;);&quot;&gt;&lt;/menuitem&gt;
+    &lt;menuitem label=&quot;分享到朋友圈&quot; onclick=&quot;alert(&apos;朋友圈&apos;);&quot;&gt;&lt;/menuitem&gt;
+    &lt;menuitem label=&quot;分享到微博&quot; onclick=&quot;alert(&apos;微博&apos;);&quot;&gt;&lt;/menuitem&gt;
+&lt;/menu&gt;
+</code></pre></li>
 <li><p>menu:定义菜单<br>menu属性：type：菜单类型属性，有三个值<br> 1) context：上下文<br> 2) toolbar:工具栏<br> 3) list:列表<br> menu内部还可以嵌入一个菜单项，即：menuitem<br> menuitem属性：</p>
 <pre><code>label：菜单项显示的名称
 icon:在菜单项左侧显示的图标
