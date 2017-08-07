@@ -294,6 +294,117 @@
             
               
                 
+                <a class="post-title-link" href="/2017/04/07/css处理浏览器输入框记住账号密码后的背景色/" itemprop="url">
+                  css处理浏览器输入框记住账号密码后的背景色
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-04-07T11:06:00+08:00" content="2017-04-07">
+              2017-04-07
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/04/07/css处理浏览器输入框记住账号密码后的背景色/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/04/07/css处理浏览器输入框记住账号密码后的背景色/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>在chrome里，记住密码后，通常会给用户名密码输入框渲染上一个背景色，在有些时候浏览器自动使用的渲染背景色会影响到系统本身的UI界面，以下是css处理方法：</p>
+<pre><code>input:-webkit-autofill , textarea:-webkit-autofill, select:-webkit-autofill {  
+-webkit-text-fill-color: #ededed !important;  
+-webkit-box-shadow: 0 0 0px 1000px transparent  inset !important;  
+background-color:transparent;  
+background-image: none;  
+ transition: background-color 50000s ease-in-out 0s; //背景色透明  生效时长  过渡效果  启用时延迟的时间  
+}  
+input {  
+     background-color:transparent;  
+}  
+</code></pre>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2017/03/24/在webstorm中使用autoprefixer/" itemprop="url">
                   在webstorm中使用autoprefixer
                 </a>
@@ -1372,7 +1483,7 @@ console.log(html);
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">19</span>
+              <span class="site-state-item-count">20</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
