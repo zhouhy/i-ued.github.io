@@ -259,6 +259,31 @@ logger.info(&apos;记录一下日志&apos;);
     </entry>
     
     <entry>
+      <title><![CDATA[css处理浏览器输入框记住账号密码后的背景色]]></title>
+      <url>http://www.zhouhy.me/2017/04/07/css%E5%A4%84%E7%90%86%E6%B5%8F%E8%A7%88%E5%99%A8%E8%BE%93%E5%85%A5%E6%A1%86%E8%AE%B0%E4%BD%8F%E8%B4%A6%E5%8F%B7%E5%AF%86%E7%A0%81%E5%90%8E%E7%9A%84%E8%83%8C%E6%99%AF%E8%89%B2/</url>
+      <content type="html"><![CDATA[<p>在chrome里，记住密码后，通常会给用户名密码输入框渲染上一个背景色，在有些时候浏览器自动使用的渲染背景色会影响到系统本身的UI界面，以下是css处理方法：</p>
+<pre><code>input:-webkit-autofill , textarea:-webkit-autofill, select:-webkit-autofill {  
+-webkit-text-fill-color: #ededed !important;  
+-webkit-box-shadow: 0 0 0px 1000px transparent  inset !important;  
+background-color:transparent;  
+background-image: none;  
+ transition: background-color 50000s ease-in-out 0s; //背景色透明  生效时长  过渡效果  启用时延迟的时间  
+}  
+input {  
+     background-color:transparent;  
+}  
+</code></pre>]]></content>
+      
+        
+        <tags>
+            
+            <tag> CSS </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[在webstorm中使用autoprefixer]]></title>
       <url>http://www.zhouhy.me/2017/03/24/%E5%9C%A8webstorm%E4%B8%AD%E4%BD%BF%E7%94%A8autoprefixer/</url>
       <content type="html"><![CDATA[<h1 id="关于Autoprefixer"><a href="#关于Autoprefixer" class="headerlink" title="关于Autoprefixer"></a>关于Autoprefixer</h1><hr>

@@ -1323,8 +1323,8 @@ logger.info(&apos;记录一下日志&apos;);
             
               
                 
-                <a class="post-title-link" href="/2017/03/24/在webstorm中使用autoprefixer/" itemprop="url">
-                  在webstorm中使用autoprefixer
+                <a class="post-title-link" href="/2017/04/07/css处理浏览器输入框记住账号密码后的背景色/" itemprop="url">
+                  css处理浏览器输入框记住账号密码后的背景色
                 </a>
               
             
@@ -1337,8 +1337,8 @@ logger.info(&apos;记录一下日志&apos;);
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-03-24T14:09:14+08:00" content="2017-03-24">
-              2017-03-24
+            <time itemprop="dateCreated" datetime="2017-04-07T11:06:00+08:00" content="2017-04-07">
+              2017-04-07
             </time>
           </span>
 
@@ -1348,8 +1348,8 @@ logger.info(&apos;记录一下日志&apos;);
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2017/03/24/在webstorm中使用autoprefixer/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/24/在webstorm中使用autoprefixer/" itemprop="commentsCount"></span>
+                <a href="/2017/04/07/css处理浏览器输入框记住账号密码后的背景色/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/04/07/css处理浏览器输入框记住账号密码后的背景色/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -1373,54 +1373,20 @@ logger.info(&apos;记录一下日志&apos;);
 
       
         
-          <h1 id="关于Autoprefixer"><a href="#关于Autoprefixer" class="headerlink" title="关于Autoprefixer"></a>关于Autoprefixer</h1><hr>
-<p>Autoprefixer是一个后台处理程序，不像Sass以及Stylus之类的预处理器。它适用于普通的CSS，可以实现CSS3自动补全，也可以跟sass，less,及stylus集成，在CSS编译前或编译后运行。<br>附地址：<a href="https://github.com/postcss/autoprefixer" title="https://github.com/postcss/autoprefixer">https://github.com/postcss/autoprefixer</a></p>
-<p>当Autoprefixer添加前缀到css,还不会忘记修复语法差异。</p>
-<pre><code>a{
-     background : linear-gradient(to top, black, white);
-     display : flex
-}
-
-::placeholder {
-     color : #ccc
-}
-</code></pre><p>编译成：</p>
-<pre><code>a {
-    background : -webkit-linear-gradient(bottom, black, white);
-    background : linear-gradient(to top, black, white);
-    display : -webkit-box;
-    display : -webkit-flex;
-    display : -moz-box;
-    display : -ms-flexbox;
-    display : flex
-}
-:-ms-input-placeholder {
-    color : #ccc
-}
-::-moz-placeholder {
-    color : #ccc
-}
-::-webkit-input-placeholder {
-    color : #ccc
-}
-::placeholder {
-    color : #ccc
-}
-</code></pre><p>Autoprefixer 同样会清理过期的前缀，因此下面的代码：</p>
-<pre><code>a {
-    -webkit-border-radius : 5px;
-    border-radius : 5px
-}
-</code></pre><p>编译成：</p>
-<pre><code>a {
-    border-radius : 5px
-}
-</code></pre><p>因为经过Autoprefixer处理，CSS将仅包含实际的浏览器前缀。<br>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2017/03/24/在webstorm中使用autoprefixer/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <p>在chrome里，记住密码后，通常会给用户名密码输入框渲染上一个背景色，在有些时候浏览器自动使用的渲染背景色会影响到系统本身的UI界面，以下是css处理方法：</p>
+<pre><code>input:-webkit-autofill , textarea:-webkit-autofill, select:-webkit-autofill {  
+-webkit-text-fill-color: #ededed !important;  
+-webkit-box-shadow: 0 0 0px 1000px transparent  inset !important;  
+background-color:transparent;  
+background-image: none;  
+ transition: background-color 50000s ease-in-out 0s; //背景色透明  生效时长  过渡效果  启用时延迟的时间  
+}  
+input {  
+     background-color:transparent;  
+}  
+</code></pre>
+          
         
       
     </div>
@@ -1492,7 +1458,7 @@ logger.info(&apos;记录一下日志&apos;);
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">18</span>
+              <span class="site-state-item-count">19</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1502,7 +1468,7 @@ logger.info(&apos;记录一下日志&apos;);
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
