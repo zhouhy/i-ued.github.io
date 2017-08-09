@@ -4,40 +4,6 @@
   
     
     <entry>
-      <title><![CDATA[webstorm里运行gulp任务时报错failed to list tasks]]></title>
-      <url>http://www.zhouhy.me/2017/08/09/webstorm%E9%87%8C%E8%BF%90%E8%A1%8Cgulp%E4%BB%BB%E5%8A%A1%E6%97%B6%E6%8A%A5%E9%94%99failed-to-list-tasks/</url>
-      <content type="html"><![CDATA[<p>开发过程中，由于更新了Node.js的版本，导致用gulp构建打包项目的时候，会报错：<br>failed to list tasks<br>webstrom窗口不能正确显示gulp的任务列表</p>
-<p>百度解决办法：点击任务列表右侧的齿轮，选择gulp settings，在gulp package一行里添加你的gulp路径。<br>比如：E:\projectnode_modules\gulp</p>
-<p>参考资料：<a href="https://stackoverflow.com/questions/32825617/gulp-error-in-webstorm-failed-to-list-gulp-tasks" target="_blank" rel="external">https://stackoverflow.com/questions/32825617/gulp-error-in-webstorm-failed-to-list-gulp-tasks</a></p>
-]]></content>
-      
-        
-        <tags>
-            
-            <tag> 工具插件 </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[TypeError: require.extensions.hasOwnProperty is not a function]]></title>
-      <url>http://www.zhouhy.me/2017/08/09/TypeError-require-extensions-hasOwnProperty-is-not-a-function/</url>
-      <content type="html"><![CDATA[<p>开发过程中，由于更新了Node.js的版本，导致跑之前项目的时候，会报错：<br>TypeError: require.extensions.hasOwnProperty is not a function</p>
-<p>百度了答案，需要把node_modules删除掉，然后重新npm install </p>
-<p>参考资料：<a href="https://stackoverflow.com/questions/44298322/node-8-0-0-and-npm-4-2-0-error-express-load-require-extensions-hasownproperty-is" target="_blank" rel="external">https://stackoverflow.com/questions/44298322/node-8-0-0-and-npm-4-2-0-error-express-load-require-extensions-hasownproperty-is</a></p>
-]]></content>
-      
-        
-        <tags>
-            
-            <tag> 工具插件 </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
       <title><![CDATA[Hexo报错，DEP0061]]></title>
       <url>http://www.zhouhy.me/2017/08/07/Hexo%E6%8A%A5%E9%94%99%EF%BC%8CDEP0061/</url>
       <content type="html"><![CDATA[<p>在使用hexo 命令生成新页面时，会报错误：</p>
@@ -164,6 +130,23 @@ const Baz = r =&gt; require.ensure([],()=&gt;r(require(&apos;./Baz.vue&apos;)),&
     </entry>
     
     <entry>
+      <title><![CDATA[webstorm里运行gulp任务时报错failed to list tasks]]></title>
+      <url>http://www.zhouhy.me/2017/06/09/webstorm%E9%87%8C%E8%BF%90%E8%A1%8Cgulp%E4%BB%BB%E5%8A%A1%E6%97%B6%E6%8A%A5%E9%94%99failed-to-list-tasks/</url>
+      <content type="html"><![CDATA[<p>开发过程中，由于更新了Node.js的版本，导致用gulp构建打包项目的时候，会报错：<br>failed to list tasks<br>webstrom窗口不能正确显示gulp的任务列表</p>
+<p>百度解决办法：点击任务列表右侧的齿轮，选择gulp settings，在gulp package一行里添加你的gulp路径。<br>比如：E:\projectnode_modules\gulp</p>
+<p>参考资料：<a href="https://stackoverflow.com/questions/32825617/gulp-error-in-webstorm-failed-to-list-gulp-tasks" target="_blank" rel="external">https://stackoverflow.com/questions/32825617/gulp-error-in-webstorm-failed-to-list-gulp-tasks</a></p>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> 工具插件 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[Vue 报错Cannot assign to read only property 'exports' of object '#<Object>']]></title>
       <url>http://www.zhouhy.me/2017/06/01/Vue-%E6%8A%A5%E9%94%99Cannot-assign-to-read-only-property-exports-of-object-Object/</url>
       <content type="html"><![CDATA[<p>今天在项目里遇到一个错误，<br>    <code>Uncaught TypeError: Cannot assign to read only property &#39;exports&#39; of object &#39;#Object&#39; at Object.anonymous</code></p>
@@ -224,6 +207,23 @@ $ git push --tags        #上传所有标签
         <tags>
             
             <tag> GIT </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[TypeError: require.extensions.hasOwnProperty is not a function]]></title>
+      <url>http://www.zhouhy.me/2017/05/09/TypeError-require-extensions-hasOwnProperty-is-not-a-function/</url>
+      <content type="html"><![CDATA[<p>开发过程中，由于更新了Node.js的版本，导致跑之前项目的时候，会报错：<br>TypeError: require.extensions.hasOwnProperty is not a function</p>
+<p>百度了答案，需要把node_modules删除掉，然后重新npm install </p>
+<p>参考资料：<a href="https://stackoverflow.com/questions/44298322/node-8-0-0-and-npm-4-2-0-error-express-load-require-extensions-hasownproperty-is" target="_blank" rel="external">https://stackoverflow.com/questions/44298322/node-8-0-0-and-npm-4-2-0-error-express-load-require-extensions-hasownproperty-is</a></p>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> 工具插件 </tag>
             
         </tags>
         
