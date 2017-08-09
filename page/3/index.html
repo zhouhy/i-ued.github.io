@@ -89,7 +89,7 @@
 <meta name="description" content="所有的可以岁月静好，都是有人为你负重前行。">
 <meta property="og:type" content="website">
 <meta property="og:title" content="晨曦雨梦">
-<meta property="og:url" content="http://www.zhouhy.me/archives/2016/index.html">
+<meta property="og:url" content="http://www.zhouhy.me/page/3/index.html">
 <meta property="og:site_name" content="晨曦雨梦">
 <meta property="og:description" content="所有的可以岁月静好，都是有人为你负重前行。">
 <meta name="twitter:card" content="summary">
@@ -115,9 +115,9 @@
 
 
 
-  <link rel="canonical" href="http://www.zhouhy.me/archives/2016/"/>
+  <link rel="canonical" href="http://www.zhouhy.me/page/3/"/>
 
-  <title> 归档 | 晨曦雨梦 </title>
+  <title> 晨曦雨梦 </title>
  
 </head>
 
@@ -149,7 +149,9 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  page-archive  ">
+  <div class="container one-collumn sidebar-position-left 
+   page-home 
+ ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -269,214 +271,548 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
+  <section id="posts" class="posts-expand">
+    
+      
 
-  <section id="posts" class="posts-collapse">
-    <span class="archive-move-on"></span>
+  
+  
 
-    <span class="archive-page-counter">
-      
-      
-      
-        
-      
-      嗯..! 目前共计 23 篇日志。 继续努力。
-    </span>
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
 
     
+      <header class="post-header">
 
-      
-      
-      
-
-      
         
-        <div class="collection-title">
-          <h2 class="archive-year motion-element" id="archive-year-2016">2016</h2>
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/08/08/ES6——Set和Map数据结构/" itemprop="url">
+                  ES6——Set和Map数据结构
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-08-08T15:29:07+08:00" content="2016-08-08">
+              2016-08-08
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/08/08/ES6——Set和Map数据结构/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/08/ES6——Set和Map数据结构/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
         </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
       
       
 
       
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
         
-            <a class="post-title-link" href="/2016/08/30/解决iframe窗体丢失Session时登录窗口显示在子页面的问题/" itemprop="url">
-              
-                <span itemprop="name">解决iframe窗体丢失Session时登录窗口显示在子页面的问题</span>
-              
-            </a>
+          
+            <h1 id="Set"><a href="#Set" class="headerlink" title="Set"></a>Set</h1><h2 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h2><p>ES6提供了新的数据结构Set，类似于数组，但其成员的值都是唯一的，没有重复值。<br>Set本身是一个构造函数，用来生成一个Set数据结构。</p>
+<pre><code>const s = new Set();
+[2,3,5,4,5,3,2].forEach(x =&gt; s.add(x));
+for(let i of s){
+    console.log(i);
+}
+//2 3 4 5
+</code></pre><p>上面代码通过add方法向Set结构加入成员，结果表明Set结构不会添加重复的值。</p>
+<p>Set函数可以接受一个数组(或具有itrable接口的其他数据结构)作为参数，用来初使化。</p>
+<pre><code>//例1
+const set = new Set([1,2,3,4,4]);
+[...set]
+//[1,2,3,4]
+
+//例二
+const items = new Set([1,2,3,4,5,5,5,5]);
+items.size //5
+
+//例三
+function divs(){
+    return [...document.querySelectorAll(&apos;div&apos;)]
+}
+
+const set = new Set(divs());
+set.size //56
+</code></pre><p>上面代码中，例一和二都是Set函数接受数组作为参数，例三是接受类似数组的对象作为参数。同时也展示了一种去除数组重复成员的方法。</p>
+<pre><code>//去除数组的重复成员
+[...new Set(array)]
+</code></pre><p>向Set加入值的时候，不会发生类型转换，所有5和“ 5” 是两个不同的值。Set内部判断两个值是否不同，使用的算法是”Same-value equality”，它类似于精确相等运算符（===），主要区别是NaN等于自身，而精确相等运算符认为NaN不等于自身。</p>
+<pre><code>let set = new Set();;
+let a = NaN;
+let b = NaN;
+set.add(a);
+set.add(b);
+set    //Set {NaN}
+</code></pre><p>上面代码中，向Set添加了两个NaN,但只能加入一个，表明在Set内部，两个NaN是相等的。</p>
+<pre><code>let set = new Set();
+set.add({});
+set.size    //1
+
+set.add({});
+set.size     //2
+</code></pre><p>上面代码，由于两个空对象不相等，所以被视为两个值。</p>
+<h2 id="Set实例的属性和方法"><a href="#Set实例的属性和方法" class="headerlink" title="Set实例的属性和方法"></a>Set实例的属性和方法</h2><p>set结构的实例有以下属性：</p>
+<ol>
+<li>Set.prototype.constructor    构造函数，默认就是Set函数</li>
+<li>Set.prototype.size    返回Set实例的成员总数</li>
+</ol>
+<p>Set实例的方法分为两大类：操作方法（用户操作数据）和遍历方法（遍历成员）。</p>
+<p>操作方法：</p>
+<ul>
+<li>add(value)    添加某个值，返回Set结构本身</li>
+<li>delete(value)    删除某个值，返回一个boolean值，表示删除是否成功</li>
+<li>has(value)    返回一个boolean值，表示该值是否为set的成员</li>
+<li>clear()        清除所有成员，没有返回值</li>
+</ul>
+<p>上面这些属性和方法的实例：</p>
+<pre><code>s.add(1).add(2).add(2);
+s.szie    //2
+s.has(1)    //true
+s.has(2)    //true
+s.has(3)    //false
+s.delete(2)
+s.has(2)    //false
+</code></pre><p>下面是一个对比，看看在判断是否包含一个键上面，object结构和Set结构的写法不同。<br>    //对象写法<br>    const properties = {<br>        ‘width’:1,<br>        ‘height’:1<br>    };<br>    if(properties[someName]){<br>        //do somthing<br>    }</p>
+<pre><code>//Set的写法
+const properties = new Set();
+properties.add(&apos;width&apos;);
+properties.add(&apos;height&apos;);
+if(properties.has(someName)){
+    //do something
+}
+</code></pre><p>Array.from方法可以将Set结构转为数组</p>
+<pre><code>const items = new Set([1,2,3,4,5]);
+const array = Array.from(items);
+</code></pre><p>这就提供一种云除重复成员的另一种方法</p>
+<pre><code>function dedupe(array){
+    return Array.from(new Set(array))
+}
+dedupe([1,2,2,3,4,4,5])    //[1,2,3,4,5]
+</code></pre><p>遍历方法：</p>
+<p>Set提供四个遍历方法，用于遍历成员</p>
+<ul>
+<li>keys()    返回键名的遍历</li>
+<li>values()    返回键值的遍历</li>
+<li>entries()    返回键值对的遍历</li>
+<li>forEach()    使用回调函数遍历每个成员</li>
+</ul>
+<p>特别需要指出：set的遍历顺序是插入顺序，这个特性有时非常有用，比如使用Set保存一个回调函数列表，调用时就能保证按照添加顺序调用。</p>
+<p>1.keys(),values(),entries()<br>keys ，values，entries方法返回的都是遍历器对象，由于Set结构没有键名，只有键值（或者键名和键值是同一个值）,所以keys和values方法的行为完全一致。</p>
+<pre><code>let set = new Set([&apos;red,&apos;green&apos;,&apos;blue&apos;]);
+for(let item of set.keys()){
+    console.log(item);
+}
+//red
+//green
+//blue
+
+for(let item of set.values()){
+    console.log(item);
+}
+//red
+//green
+//blue
+
+for(let item of set.entries()){
+    console.log(item);    
+}
+// [&quot;red&quot;, &quot;red&quot;]
+// [&quot;green&quot;, &quot;green&quot;]
+// [&quot;blue&quot;, &quot;blue&quot;]
+</code></pre><p>上面代码里，entries()方法遍历的遍历器，同时包括了键名和键值，所以每次输出一个数组，它的两个成员完全相等。</p>
+<p>Set结构的实例默认可遍历，它的默认遍历器生成函数就是它的values方法。</p>
+<pre><code>Set.prototype[Symbol.iterator] === Set.prototype.values
+//true
+</code></pre><p>这意味着，可以省略values方法，直接用for…of遍历Set。</p>
+<pre><code>let set = new Set([&apos;red&apos;,&apos;green&apos;,&apos;blue&apos;]);
+for(let x of set){
+    console.log(x);
+}
+//red
+//green
+//blue
+</code></pre><ol>
+<li><p>forEach()<br>Set结构实例的forEach方法，用于对每个成员执行某种操作，没有返回值。</p>
+<p> let set = new Set([1,2,3]);<br> set.forEach((value,key) =&gt; console.log(value * 2));<br> //2<br> //4<br> //6</p>
+</li>
+</ol>
+<p>forEach方法的第一个参数就是一个处理函数，该函数的参数依次为键值、键名、集合本身。另外，forEach()还可以有第二个参数，表示绑定的this对象。</p>
+<ol>
+<li>遍历的运用</li>
+</ol>
+<p>扩展运算符(…)内部使用for…of循环,所以也可以用于Set结构。</p>
+<pre><code>let set = new Set([&apos;red&apos;,&apos;green&apos;,&apos;blue&apos;]);
+let arr = [...set];
+//[&apos;red&apos;,&apos;green&apos;,&apos;blue&apos;]
+</code></pre><p>扩展运算符和Set结构相结合，就可以去除数组的重复成员。</p>
+<pre><code>let arr = [3,5,2,2,4,4,5];
+let unique = [...new Set(arr)];
+//[3,5,2,4]
+</code></pre><p>而且数组的map和filter方法也可以用于Set了。</p>
+<pre><code>let set = new Set([1,2,3]);
+set = new Set([...set].map(x =&gt; x*2))
+//返回Set结构:{2,4,6}
+
+let set = new Set([1,2,3,4,5]);
+set = new Set([...set].filter(x =&gt; (x%2) == 0))
+//返回Set结构:{2,4}
+</code></pre><p>因此使用Set可以很容易地实现并集，交集，和差集。</p>
+<pre><code>let a = new Set([1,2,3]);
+let b = new Set([4,3,2]);
+//并集
+let union = new Set([...a, ...b]);
+//Set ｛1,2,3,4｝
+
+//交集
+let intersect = new Set([...a].filter(x =&gt; b.has(x)));
+//Set {2,3}
+
+//差集
+let difference = new Set([...a].filter(x =&gt; !b.has(x)))
+//Set {1}
+</code></pre><p>如果想在遍历操作中，同步改变原来的JS结构，目前没有直接的方法，但有两种变能方法，一种是利用原Set结构映射出一个新的结构，然后赋值给原来的Set结构，另一种是利用Array.from()方法。</p>
+<p>//方法一<br>let set = new Set([1,2,3]);<br>set = new Set(…set).map(val =&gt; val * 2);<br>//set的值为2,4,6</p>
+<p>//方法二<br>let set = new Set([1,2,3]);<br>set = new Set(Array.from(set,val =&gt; val * 2));<br>//set的值是2,4,6</p>
+<p>上面代码提供了两种方法，直接在遍历操作中改变原来的Set结构。</p>
+
+          
         
-      </h1>
+      
+    </div>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-08-30T09:10:31+08:00"
-              content="2016-08-30" >
-          08-30
-        </time>
-      </div>
+    <div>
+      
+    </div>
 
-    </header>
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
   </article>
 
 
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
 
     
+      <header class="post-header">
 
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
         
-            <a class="post-title-link" href="/2016/08/28/Web Uploader上传按钮失效/" itemprop="url">
-              
-                <span itemprop="name">Web Uploader上传按钮失效</span>
-              
-            </a>
         
-      </h1>
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/06/13/HTML中input和textarea的区别/" itemprop="url">
+                  HTML中input和textarea的区别
+                </a>
+              
+            
+          </h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-08-28T18:35:31+08:00"
-              content="2016-08-28" >
-          08-28
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-06-13T09:58:47+08:00" content="2016-06-13">
+              2016-06-13
+            </time>
+          </span>
 
-    </header>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/06/13/HTML中input和textarea的区别/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/13/HTML中input和textarea的区别/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>在HTML中，有两种方式表达文本框，一个是input元素的单行文本框，一种是textarea的多行文本框。</p>
+<h2 id="input"><a href="#input" class="headerlink" title="input"></a>input</h2><ol>
+<li>需要通过 指定type的值为text</li>
+<li><p>可通过 size 属性指定显示字符的长度，value属性指定初使值，maxlength属性指定文本框可以输入最长长度；</p>
+<p> <code>&lt;input type=&quot;text&quot; value=&quot;&quot; size=&quot;10&quot; maxlength=&quot;15&quot; /&gt;</code></p>
+</li>
+</ol>
+<h2 id="textarea"><a href="#textarea" class="headerlink" title="textarea"></a>textarea</h2><ol>
+<li>需要双标签<code>&lt;textarea&gt;&lt;/textarea&gt;</code></li>
+<li>内容放在<code>&lt;textarea&gt;&lt;/textarea&gt;</code>标签中</li>
+<li><p>使用row,col指定大小</p>
+<p> <code>&lt;textarea row=&quot;3&quot; col=&quot;4&quot;&gt;这里放内容&lt;/textarea&gt;</code></p>
+</li>
+</ol>
+<p>区别：一个是单行文本框，一个是多行文本框。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
   </article>
 
 
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
 
     
+      <header class="post-header">
 
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
         
-            <a class="post-title-link" href="/2016/08/08/ES6——Set和Map数据结构/" itemprop="url">
-              
-                <span itemprop="name">ES6——Set和Map数据结构</span>
-              
-            </a>
         
-      </h1>
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/05/27/js实现无限层级树形结构（有点类似递归）/" itemprop="url">
+                  js实现无限层级树形结构（有点类似递归）
+                </a>
+              
+            
+          </h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-08-08T15:29:07+08:00"
-              content="2016-08-08" >
-          08-08
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-05-27T14:13:58+08:00" content="2016-05-27">
+              2016-05-27
+            </time>
+          </span>
 
-    </header>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/05/27/js实现无限层级树形结构（有点类似递归）/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/27/js实现无限层级树形结构（有点类似递归）/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <pre><code>var zNodes=[
+    {id:1,pId:0,name:&quot;0A&quot;},
+    {id:11,pId:1,name:&quot;1A1&quot;},
+    {id:12,pId:1,name:&quot;1A2&quot;},
+    {id:13,pId:1,name:&quot;1A3&quot;},
+    {id:2,pId:0,name:&quot;0B&quot;},
+    {id:21,pId:2,name:&quot;2B1&quot;},
+    {id:22,pId:2,name:&quot;2B2&quot;},
+    {id:23,pId:2,name:&quot;2B3&quot;},
+    {id:3,pId:0,name:&quot;0C&quot;},
+    {id:31,pId:3,name:&quot;3C1&quot;},
+    {id:32,pId:3,name:&quot;3C2&quot;},
+    {id:33,pId:3,name:&quot;3C3&quot;},
+    {id:34,pId:31,name:&quot;31x&quot;},
+    {id:35,pId:31,name:&quot;31y&quot;},
+    {id:36,pId:31,name:&quot;31z&quot;},
+    {id:37,pId:36,name:&quot;36z&quot;} ,
+    {id:38,pId:37,name:&quot;37z&quot;}
+];
+function treeMenu(a){
+    this.tree=a||[];
+    this.groups={};
+};
+treeMenu.prototype={
+init:function(pid){
+    this.group();
+    return this.getDom(this.groups[pid]);
+},
+group:function(){
+    for(var i=0;i&lt;this.tree.length;i++){
+        if(this.groups[this.tree[i].pId]){
+            this.groups[this.tree[i].pId].push(this.tree[i]);
+        }else{
+            this.groups[this.tree[i].pId]=[];
+            this.groups[this.tree[i].pId].push(this.tree[i]);
+        }
+    }
+    console.dir(this.groups)
+},
+getDom:function(a){
+    if(!a){return &apos;&apos;}
+    var html=&apos;\n&lt;ul &gt;\n&apos;;
+    for(var i=0;i&lt;a.length;i++){
+        html+=&apos;&lt;li&gt;&lt;a href=&quot;#&quot;&gt;&apos;+a[i].name+&apos;&lt;/a&gt;&apos;;
+        html+=this.getDom(this.groups[a[i].id]);
+        html+=&apos;&lt;/li&gt;\n&apos;;
+    };
+    html+=&apos;&lt;/ul&gt;\n&apos;;
+    return html;
+}
+};
+var html=new treeMenu(zNodes).init(0);
+console.log(html);
+</code></pre>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
   </article>
 
 
-
     
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/06/13/HTML中input和textarea的区别/" itemprop="url">
-              
-                <span itemprop="name">HTML中input和textarea的区别</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-06-13T09:58:47+08:00"
-              content="2016-06-13" >
-          06-13
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/05/27/js实现无限层级树形结构（有点类似递归）/" itemprop="url">
-              
-                <span itemprop="name">js实现无限层级树形结构（有点类似递归）</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-05-27T14:13:58+08:00"
-              content="2016-05-27" >
-          05-27
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
   </section>
 
   
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
+  </nav>
 
 
 
@@ -677,12 +1013,6 @@
   
 
   
-  
-    <script type="text/javascript" id="motion.page.archive">
-      $('.archive-year').velocity('transition.slideLeftIn');
-    </script>
-  
-
 
   
 

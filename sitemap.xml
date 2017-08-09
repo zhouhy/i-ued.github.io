@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.zhouhy.me/2017/08/09/webstorm%E9%87%8C%E8%BF%90%E8%A1%8Cgulp%E4%BB%BB%E5%8A%A1%E6%97%B6%E6%8A%A5%E9%94%99failed-to-list-tasks/</loc>
+    
+    <lastmod>2017-08-09T09:53:21.407Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.zhouhy.me/2017/08/09/TypeError-require-extensions-hasOwnProperty-is-not-a-function/</loc>
+    
+    <lastmod>2017-08-09T09:45:41.033Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.zhouhy.me/2016/08/08/ES6%E2%80%94%E2%80%94Set%E5%92%8CMap%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</loc>
+    
+    <lastmod>2017-08-08T09:23:10.511Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.zhouhy.me/2017/08/07/Hexo%E6%8A%A5%E9%94%99%EF%BC%8CDEP0061/</loc>
     
     <lastmod>2017-08-07T03:25:10.258Z</lastmod>
