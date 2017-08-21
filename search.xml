@@ -4,6 +4,28 @@
   
     
     <entry>
+      <title><![CDATA[VUEX对IE的支持]]></title>
+      <url>http://www.zhouhy.me/2017/08/17/VUEX%E5%AF%B9IE%E7%9A%84%E6%94%AF%E6%8C%81/</url>
+      <content type="html"><![CDATA[<p>用VUE搭的一个后台管理系统在IE上跑不起来，并报错：</p>
+<pre><code>【vuex】vuex requires a Promise polyfill in this browser.
+</code></pre><p>原来是VUEX不支持IE。</p>
+<p>百度解决办法：</p>
+<p>原来要想在IE中使用Vuex，需要安装 <span style="color:red">babel-polyfill</span></p>
+<p>先安装babel-polyfill</p>
+<pre><code>npm install babel-polyfill
+</code></pre><p>然后store.js里引用</p>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> VUE </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[Hexo报错，DEP0061]]></title>
       <url>http://www.zhouhy.me/2017/08/07/Hexo%E6%8A%A5%E9%94%99%EF%BC%8CDEP0061/</url>
       <content type="html"><![CDATA[<p>在使用hexo 命令生成新页面时，会报错误：</p>
@@ -23,9 +45,11 @@
     </entry>
     
     <entry>
-      <title><![CDATA[去除html带标签正则]]></title>
+      <title><![CDATA[常用正则]]></title>
       <url>http://www.zhouhy.me/2017/07/03/%E5%8E%BB%E9%99%A4html%E5%B8%A6%E6%A0%87%E7%AD%BE%E6%AD%A3%E5%88%99/</url>
-      <content type="html"><![CDATA[<pre><code>re=/&lt;[^&lt;&gt;]+&gt;/g
+      <content type="html"><![CDATA[<pre><code>re=/&lt;[^&lt;&gt;]+&gt;/g        //去除html带标签正则
+re=/^\S.*\S$/gi        //匹配首尾空格，但允许中间空格
+re=/^1[345678]\d{9}$/    //电话
 </code></pre>]]></content>
       
         

@@ -294,6 +294,114 @@
             
               
                 
+                <a class="post-title-link" href="/2017/08/17/VUEX对IE的支持/" itemprop="url">
+                  VUEX对IE的支持
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-08-17T14:05:29+08:00" content="2017-08-17">
+              2017-08-17
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/08/17/VUEX对IE的支持/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/08/17/VUEX对IE的支持/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>用VUE搭的一个后台管理系统在IE上跑不起来，并报错：</p>
+<pre><code>【vuex】vuex requires a Promise polyfill in this browser.
+</code></pre><p>原来是VUEX不支持IE。</p>
+<p>百度解决办法：</p>
+<p>原来要想在IE中使用Vuex，需要安装 <span style="color:red">babel-polyfill</span></p>
+<p>先安装babel-polyfill</p>
+<pre><code>npm install babel-polyfill
+</code></pre><p>然后store.js里引用</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2017/08/07/Hexo报错，DEP0061/" itemprop="url">
                   Hexo报错，DEP0061
                 </a>
@@ -400,7 +508,7 @@
               
                 
                 <a class="post-title-link" href="/2017/07/03/去除html带标签正则/" itemprop="url">
-                  去除html带标签正则
+                  常用正则
                 </a>
               
             
@@ -450,7 +558,9 @@
       
         
           
-            <pre><code>re=/&lt;[^&lt;&gt;]+&gt;/g
+            <pre><code>re=/&lt;[^&lt;&gt;]+&gt;/g        //去除html带标签正则
+re=/^\S.*\S$/gi        //匹配首尾空格，但允许中间空格
+re=/^1[345678]\d{9}$/    //电话
 </code></pre>
           
         
@@ -1273,120 +1383,6 @@ $ git push --tags        #上传所有标签
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/04/25/Node-js开发需要注意的问题/" itemprop="url">
-                  Node.js开发需要注意的问题(后期陆续更新)
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-04-25T15:48:06+08:00" content="2017-04-25">
-              2017-04-25
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2017/04/25/Node-js开发需要注意的问题/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/04/25/Node-js开发需要注意的问题/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <ol>
-<li>Node.js项目，文件夹所在路径，一定不能有中文字符</li>
-<li>node.js的项目文件一定要用utf-8编码格式，否则文件内容里的中文等双字节会出问题</li>
-<li>json文件里不支持注释，任何格式的注释都不支持，如：// /<em> </em>/ <!-- --></li>
-<li><p>node.js没有web.config文件，可以用一个json对象代替，比如在根目录下添加一个settings.js文件：</p>
-<pre><code>module.exports = {
-    abc:123456,
-    def:&apos;www.zhouhy.me&apos;
-}
-</code></pre></li>
-</ol>
-<p>   调用方法：</p>
-<pre><code>var settings = require(&apos;./settings&apos;);
-console.log(settins.def);
-</code></pre>
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1432,7 +1428,7 @@ console.log(settins.def);
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">23</span>
+              <span class="site-state-item-count">24</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

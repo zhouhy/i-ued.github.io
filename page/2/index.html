@@ -294,6 +294,120 @@
             
               
                 
+                <a class="post-title-link" href="/2017/04/25/Node-js开发需要注意的问题/" itemprop="url">
+                  Node.js开发需要注意的问题(后期陆续更新)
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-04-25T15:48:06+08:00" content="2017-04-25">
+              2017-04-25
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/04/25/Node-js开发需要注意的问题/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/04/25/Node-js开发需要注意的问题/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <ol>
+<li>Node.js项目，文件夹所在路径，一定不能有中文字符</li>
+<li>node.js的项目文件一定要用utf-8编码格式，否则文件内容里的中文等双字节会出问题</li>
+<li>json文件里不支持注释，任何格式的注释都不支持，如：// /<em> </em>/ <!-- --></li>
+<li><p>node.js没有web.config文件，可以用一个json对象代替，比如在根目录下添加一个settings.js文件：</p>
+<pre><code>module.exports = {
+    abc:123456,
+    def:&apos;www.zhouhy.me&apos;
+}
+</code></pre></li>
+</ol>
+<p>   调用方法：</p>
+<pre><code>var settings = require(&apos;./settings&apos;);
+console.log(settins.def);
+</code></pre>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2017/04/25/Node-js中日志管理模块使用/" itemprop="url">
                   Node.js中日志管理模块使用
                 </a>
@@ -1289,113 +1403,6 @@ function ready(){
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/08/28/Web Uploader上传按钮失效/" itemprop="url">
-                  Web Uploader上传按钮失效
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-08-28T18:35:31+08:00" content="2016-08-28">
-              2016-08-28
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/08/28/Web Uploader上传按钮失效/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/28/Web Uploader上传按钮失效/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>常见 flash 报错原因:</p>
-<ol>
-<li>flash 版本太低，请至少大于等于 11.4，低于此版本请提示更新 flash 版本</li>
-<li><p>按钮或者他的父级被设置 display:none 隐藏了，在这种情况下 flash 会停止运行，请改用以下方式隐藏，给 需要隐藏的元素加 webuploader-element-invisible 类名代替加 display:none 属性。</p>
-<p> .webuploader-element-invisible {<br> position: absolute !important;<br> clip: rect(1px 1px 1px 1px); /<em> IE6, IE7 </em>/clip: rect(1px,1px,1px,1px);}</p>
-</li>
-</ol>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1441,7 +1448,7 @@ function ready(){
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">23</span>
+              <span class="site-state-item-count">24</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

@@ -70,7 +70,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="工具插件," />
+  <meta name="keywords" content="VUE," />
 
 
 
@@ -86,22 +86,37 @@
 
 
 
-<meta name="description" content="开发过程中，由于更新了Node.js的版本，导致用gulp构建打包项目的时候，会报错：failed to list taskswebstrom窗口不能正确显示gulp的任务列表
-百度解决办法：点击任务列表右侧的齿轮，选择gulp settings，在gulp package一行里添加你的gulp路径。比如：E:\projectnode_modules\gulp
-参考资料：https://stack">
+<meta name="description" content="用VUE搭的一个后台管理系统在IE上跑不起来，并报错：
+【vuex】vuex requires a Promise polyfill in this browser.
+原来是VUEX不支持IE。
+百度解决办法：
+原来要想在IE中使用Vuex，需要安装 babel-polyfill
+先安装babel-polyfill
+npm install babel-polyfill
+然后store.js里引用">
 <meta property="og:type" content="article">
-<meta property="og:title" content="webstorm里运行gulp任务时报错failed to list tasks">
-<meta property="og:url" content="http://www.zhouhy.me/2017/08/09/webstorm里运行gulp任务时报错failed-to-list-tasks/index.html">
+<meta property="og:title" content="VUEX对IE的支持">
+<meta property="og:url" content="http://www.zhouhy.me/2017/08/17/VUEX对IE的支持/index.html">
 <meta property="og:site_name" content="晨曦雨梦">
-<meta property="og:description" content="开发过程中，由于更新了Node.js的版本，导致用gulp构建打包项目的时候，会报错：failed to list taskswebstrom窗口不能正确显示gulp的任务列表
-百度解决办法：点击任务列表右侧的齿轮，选择gulp settings，在gulp package一行里添加你的gulp路径。比如：E:\projectnode_modules\gulp
-参考资料：https://stack">
-<meta property="og:updated_time" content="2017-08-09T09:53:21.407Z">
+<meta property="og:description" content="用VUE搭的一个后台管理系统在IE上跑不起来，并报错：
+【vuex】vuex requires a Promise polyfill in this browser.
+原来是VUEX不支持IE。
+百度解决办法：
+原来要想在IE中使用Vuex，需要安装 babel-polyfill
+先安装babel-polyfill
+npm install babel-polyfill
+然后store.js里引用">
+<meta property="og:updated_time" content="2017-08-17T07:52:28.787Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="webstorm里运行gulp任务时报错failed to list tasks">
-<meta name="twitter:description" content="开发过程中，由于更新了Node.js的版本，导致用gulp构建打包项目的时候，会报错：failed to list taskswebstrom窗口不能正确显示gulp的任务列表
-百度解决办法：点击任务列表右侧的齿轮，选择gulp settings，在gulp package一行里添加你的gulp路径。比如：E:\projectnode_modules\gulp
-参考资料：https://stack">
+<meta name="twitter:title" content="VUEX对IE的支持">
+<meta name="twitter:description" content="用VUE搭的一个后台管理系统在IE上跑不起来，并报错：
+【vuex】vuex requires a Promise polyfill in this browser.
+原来是VUEX不支持IE。
+百度解决办法：
+原来要想在IE中使用Vuex，需要安装 babel-polyfill
+先安装babel-polyfill
+npm install babel-polyfill
+然后store.js里引用">
 
 
 
@@ -122,9 +137,9 @@
 
 
 
-  <link rel="canonical" href="http://www.zhouhy.me/2017/08/09/webstorm里运行gulp任务时报错failed-to-list-tasks/"/>
+  <link rel="canonical" href="http://www.zhouhy.me/2017/08/17/VUEX对IE的支持/"/>
 
-  <title> webstorm里运行gulp任务时报错failed to list tasks | 晨曦雨梦 </title>
+  <title> VUEX对IE的支持 | 晨曦雨梦 </title>
  
 </head>
 
@@ -298,7 +313,7 @@
             
             
               
-                webstorm里运行gulp任务时报错failed to list tasks
+                VUEX对IE的支持
               
             
           </h1>
@@ -310,8 +325,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-08-09T17:46:50+08:00" content="2017-08-09">
-              2017-08-09
+            <time itemprop="dateCreated" datetime="2017-08-17T14:05:29+08:00" content="2017-08-17">
+              2017-08-17
             </time>
           </span>
 
@@ -321,8 +336,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2017/08/09/webstorm里运行gulp任务时报错failed-to-list-tasks/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/08/09/webstorm里运行gulp任务时报错failed-to-list-tasks/" itemprop="commentsCount"></span>
+                <a href="/2017/08/17/VUEX对IE的支持/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/08/17/VUEX对IE的支持/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -345,9 +360,14 @@
       
 
       
-        <p>开发过程中，由于更新了Node.js的版本，导致用gulp构建打包项目的时候，会报错：<br>failed to list tasks<br>webstrom窗口不能正确显示gulp的任务列表</p>
-<p>百度解决办法：点击任务列表右侧的齿轮，选择gulp settings，在gulp package一行里添加你的gulp路径。<br>比如：E:\projectnode_modules\gulp</p>
-<p>参考资料：<a href="https://stackoverflow.com/questions/32825617/gulp-error-in-webstorm-failed-to-list-gulp-tasks" target="_blank" rel="external">https://stackoverflow.com/questions/32825617/gulp-error-in-webstorm-failed-to-list-gulp-tasks</a></p>
+        <p>用VUE搭的一个后台管理系统在IE上跑不起来，并报错：</p>
+<pre><code>【vuex】vuex requires a Promise polyfill in this browser.
+</code></pre><p>原来是VUEX不支持IE。</p>
+<p>百度解决办法：</p>
+<p>原来要想在IE中使用Vuex，需要安装 <span style="color:red">babel-polyfill</span></p>
+<p>先安装babel-polyfill</p>
+<pre><code>npm install babel-polyfill
+</code></pre><p>然后store.js里引用</p>
 
       
     </div>
@@ -370,7 +390,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/工具插件/" rel="tag">#工具插件</a>
+            <a href="/tags/VUE/" rel="tag">#VUE</a>
           
         </div>
       
@@ -379,8 +399,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/08/09/TypeError-require-extensions-hasOwnProperty-is-not-a-function/" rel="next" title="TypeError: require.extensions.hasOwnProperty is not a function">
-                <i class="fa fa-chevron-left"></i> TypeError: require.extensions.hasOwnProperty is not a function
+              <a href="/2017/08/07/Hexo报错，DEP0061/" rel="next" title="Hexo报错，DEP0061">
+                <i class="fa fa-chevron-left"></i> Hexo报错，DEP0061
               </a>
             
           </div>
@@ -411,8 +431,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2017/08/09/webstorm里运行gulp任务时报错failed-to-list-tasks/"
-           data-title="webstorm里运行gulp任务时报错failed to list tasks" data-url="http://www.zhouhy.me/2017/08/09/webstorm里运行gulp任务时报错failed-to-list-tasks/">
+      <div class="ds-thread" data-thread-key="2017/08/17/VUEX对IE的支持/"
+           data-title="VUEX对IE的支持" data-url="http://www.zhouhy.me/2017/08/17/VUEX对IE的支持/">
       </div>
     
   </div>
@@ -457,7 +477,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">23</span>
+              <span class="site-state-item-count">24</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
