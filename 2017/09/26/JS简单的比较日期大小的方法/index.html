@@ -70,7 +70,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="javascript," />
 
 
 
@@ -86,16 +86,18 @@
 
 
 
-<meta name="description" content="所有的可以岁月静好，都是有人为你负重前行。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="晨曦雨梦">
-<meta property="og:url" content="http://www.zhouhy.me/archives/2017/02/index.html">
+<meta name="description" content="//获取起始日期 var startDate=document.getElementById(&amp;apos;startDate&amp;apos;).value; //转换为日期格式 startDate=startDate.replace(/\-/g, &amp;apos;\/&amp;apos;); //获取结束日期 var endDate=document.getElementById(&amp;apos;endDate&amp;ap">
+<meta name="keywords" content="javascript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JS简单的比较日期大小的方法">
+<meta property="og:url" content="http://www.zhouhy.me/2017/09/26/JS简单的比较日期大小的方法/index.html">
 <meta property="og:site_name" content="晨曦雨梦">
-<meta property="og:description" content="所有的可以岁月静好，都是有人为你负重前行。">
+<meta property="og:description" content="//获取起始日期 var startDate=document.getElementById(&amp;apos;startDate&amp;apos;).value; //转换为日期格式 startDate=startDate.replace(/\-/g, &amp;apos;\/&amp;apos;); //获取结束日期 var endDate=document.getElementById(&amp;apos;endDate&amp;ap">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-09-26T09:24:58.838Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="晨曦雨梦">
-<meta name="twitter:description" content="所有的可以岁月静好，都是有人为你负重前行。">
+<meta name="twitter:title" content="JS简单的比较日期大小的方法">
+<meta name="twitter:description" content="//获取起始日期 var startDate=document.getElementById(&amp;apos;startDate&amp;apos;).value; //转换为日期格式 startDate=startDate.replace(/\-/g, &amp;apos;\/&amp;apos;); //获取结束日期 var endDate=document.getElementById(&amp;apos;endDate&amp;ap">
 
 
 
@@ -116,9 +118,9 @@
 
 
 
-  <link rel="canonical" href="http://www.zhouhy.me/archives/2017/02/"/>
+  <link rel="canonical" href="http://www.zhouhy.me/2017/09/26/JS简单的比较日期大小的方法/"/>
 
-  <title> 归档 | 晨曦雨梦 </title>
+  <title> JS简单的比较日期大小的方法 | 晨曦雨梦 </title>
  
 </head>
 
@@ -150,7 +152,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  page-archive  ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -271,66 +273,142 @@
           <div id="content" class="content">
             
 
-  <section id="posts" class="posts-collapse">
-    <span class="archive-move-on"></span>
-
-    <span class="archive-page-counter">
-      
-      
-      
-        
-      
-      嗯..! 目前共计 25 篇日志。 继续努力。
-    </span>
-
+  <div id="posts" class="posts-expand">
     
 
-      
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                JS简单的比较日期大小的方法
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-09-26T17:18:12+08:00" content="2017-09-26">
+              2017-09-26
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/09/26/JS简单的比较日期大小的方法/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/09/26/JS简单的比较日期大小的方法/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
       
       
 
       
+        <pre><code>//获取起始日期
+var startDate=document.getElementById(&apos;startDate&apos;).value;
+//转换为日期格式
+startDate=startDate.replace(/\-/g, &apos;\/&apos;);
+//获取结束日期
+var endDate=document.getElementById(&apos;endDate&apos;).value;
+endDate=endDate.replace(/\-/g, &apos;\/&apos;);
+//如果起始日期大于结束日期
+if(Date.parse(startDate)-Date.parse(endDate)&gt;0){
+ alert(&quot;起始日期要在结束日期之前!&quot;);
+ //返回false
+ return false;
+}
+</code></pre><p>这里主要用到Date.parse()<br>Date.parse()     返回1970年1月1日午夜到指定日期（字符串）的毫秒数。</p>
+
+      
+    </div>
+
+    <div>
+      
         
-        <div class="collection-title">
-          <h2 class="archive-year motion-element" id="archive-year-2017">2017</h2>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/javascript/" rel="tag">#javascript</a>
+          
         </div>
       
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/08/17/VUEX对IE的支持/" rel="next" title="VUEX对IE的支持">
+                <i class="fa fa-chevron-left"></i> VUEX对IE的支持
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
       
 
       
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2017/02/23/jsmap/" itemprop="url">
-              
-                <span itemprop="name">JS自带map方法</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-02-23T14:54:47+08:00"
-              content="2017-02-23" >
-          02-23
-        </time>
-      </div>
-
-    </header>
+      
+    </footer>
   </article>
 
 
 
-    
-
-  </section>
-
-  
-
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -338,6 +416,14 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2017/09/26/JS简单的比较日期大小的方法/"
+           data-title="JS简单的比较日期大小的方法" data-url="http://www.zhouhy.me/2017/09/26/JS简单的比较日期大小的方法/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -357,8 +443,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -421,6 +516,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">此文章未包含目录</p>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -530,11 +636,9 @@
   
 
   
-  
-    <script type="text/javascript" id="motion.page.archive">
-      $('.archive-year').velocity('transition.slideLeftIn');
-    </script>
-  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
 
 
   

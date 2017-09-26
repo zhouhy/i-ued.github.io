@@ -92,6 +92,7 @@
 <meta property="og:url" content="http://www.zhouhy.me/page/3/index.html">
 <meta property="og:site_name" content="晨曦雨梦">
 <meta property="og:description" content="所有的可以岁月静好，都是有人为你负重前行。">
+<meta property="og:locale" content="zh-Hans">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="晨曦雨梦">
 <meta name="twitter:description" content="所有的可以岁月静好，都是有人为你负重前行。">
@@ -272,6 +273,114 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/08/30/解决iframe窗体丢失Session时登录窗口显示在子页面的问题/" itemprop="url">
+                  解决iframe窗体丢失Session时登录窗口显示在子页面的问题
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-08-30T09:10:31+08:00" content="2016-08-30">
+              2016-08-30
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/08/30/解决iframe窗体丢失Session时登录窗口显示在子页面的问题/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/30/解决iframe窗体丢失Session时登录窗口显示在子页面的问题/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>若在项目是应该了iframe的朋友也许会碰到与我一样的问题。当窗体Sessoin丢失后登录的窗体在显示在iframe的主窗口中，这还不算，更糟的是登录后，又多出来了一个iframe。真有点伤脑筋。呵呵，今天特意找了一下资料，希望对大家有所帮助，解决方法其实很简单。代码如下：</p>
+<pre><code>//在登录页面的onload中调用如下方法：
+function ready(){
+    if(top.location!=self.location)
+    {
+        top.location=self.location;
+    }
+}
+</code></pre>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
     
       
 
@@ -959,7 +1068,7 @@ console.log(html);
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">24</span>
+              <span class="site-state-item-count">25</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

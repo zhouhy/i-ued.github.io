@@ -92,6 +92,7 @@
 <meta property="og:url" content="http://www.zhouhy.me/index.html">
 <meta property="og:site_name" content="晨曦雨梦">
 <meta property="og:description" content="所有的可以岁月静好，都是有人为你负重前行。">
+<meta property="og:locale" content="zh-Hans">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="晨曦雨梦">
 <meta name="twitter:description" content="所有的可以岁月静好，都是有人为你负重前行。">
@@ -272,6 +273,120 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/09/26/JS简单的比较日期大小的方法/" itemprop="url">
+                  JS简单的比较日期大小的方法
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-09-26T17:18:12+08:00" content="2017-09-26">
+              2017-09-26
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/09/26/JS简单的比较日期大小的方法/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/09/26/JS简单的比较日期大小的方法/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <pre><code>//获取起始日期
+var startDate=document.getElementById(&apos;startDate&apos;).value;
+//转换为日期格式
+startDate=startDate.replace(/\-/g, &apos;\/&apos;);
+//获取结束日期
+var endDate=document.getElementById(&apos;endDate&apos;).value;
+endDate=endDate.replace(/\-/g, &apos;\/&apos;);
+//如果起始日期大于结束日期
+if(Date.parse(startDate)-Date.parse(endDate)&gt;0){
+ alert(&quot;起始日期要在结束日期之前!&quot;);
+ //返回false
+ return false;
+}
+</code></pre><p>这里主要用到Date.parse()<br>Date.parse()     返回1970年1月1日午夜到指定日期（字符串）的毫秒数。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
     
       
 
@@ -1280,109 +1395,6 @@ $ git push --tags        #上传所有标签
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/05/09/TypeError-require-extensions-hasOwnProperty-is-not-a-function/" itemprop="url">
-                  TypeError: require.extensions.hasOwnProperty is not a function
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-05-09T17:42:24+08:00" content="2017-05-09">
-              2017-05-09
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2017/05/09/TypeError-require-extensions-hasOwnProperty-is-not-a-function/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/05/09/TypeError-require-extensions-hasOwnProperty-is-not-a-function/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>开发过程中，由于更新了Node.js的版本，导致跑之前项目的时候，会报错：<br>TypeError: require.extensions.hasOwnProperty is not a function</p>
-<p>百度了答案，需要把node_modules删除掉，然后重新npm install </p>
-<p>参考资料：<a href="https://stackoverflow.com/questions/44298322/node-8-0-0-and-npm-4-2-0-error-express-load-require-extensions-hasownproperty-is" target="_blank" rel="external">https://stackoverflow.com/questions/44298322/node-8-0-0-and-npm-4-2-0-error-express-load-require-extensions-hasownproperty-is</a></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1428,7 +1440,7 @@ $ git push --tags        #上传所有标签
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">24</span>
+              <span class="site-state-item-count">25</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
