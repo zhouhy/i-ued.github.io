@@ -70,7 +70,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="javascript," />
+  <meta name="keywords" content="正则," />
 
 
 
@@ -86,18 +86,18 @@
 
 
 
-<meta name="description" content="re=/&amp;lt;[^&amp;lt;&amp;gt;]+&amp;gt;/g        //去除html带标签正则 re=/^\S.*\S$/gi        //匹配首尾空格，但允许中间空格 re=/^1[345678]\d{9}$/    //电话">
-<meta name="keywords" content="javascript">
+<meta name="description" content="re=/&amp;lt;[^&amp;lt;&amp;gt;]+&amp;gt;/g        //去除html带标签正则 re=/^\S.*\S$/gi        //匹配首尾空格，但允许中间空格 re=/^1[345678]\d{9}$/    //电话 re=/^[a-zA-Z0-9_-]{4,16}$/    //用户名，4-16位(字母、数字、下划线、减号) re=/^\d+$/    //正整数 re=/^-">
+<meta name="keywords" content="正则">
 <meta property="og:type" content="article">
 <meta property="og:title" content="常用正则">
 <meta property="og:url" content="http://www.zhouhy.me/2017/07/03/去除html带标签正则/index.html">
 <meta property="og:site_name" content="晨曦雨梦">
-<meta property="og:description" content="re=/&amp;lt;[^&amp;lt;&amp;gt;]+&amp;gt;/g        //去除html带标签正则 re=/^\S.*\S$/gi        //匹配首尾空格，但允许中间空格 re=/^1[345678]\d{9}$/    //电话">
+<meta property="og:description" content="re=/&amp;lt;[^&amp;lt;&amp;gt;]+&amp;gt;/g        //去除html带标签正则 re=/^\S.*\S$/gi        //匹配首尾空格，但允许中间空格 re=/^1[345678]\d{9}$/    //电话 re=/^[a-zA-Z0-9_-]{4,16}$/    //用户名，4-16位(字母、数字、下划线、减号) re=/^\d+$/    //正整数 re=/^-">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-08-21T03:40:39.825Z">
+<meta property="og:updated_time" content="2017-10-10T03:37:04.051Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="常用正则">
-<meta name="twitter:description" content="re=/&amp;lt;[^&amp;lt;&amp;gt;]+&amp;gt;/g        //去除html带标签正则 re=/^\S.*\S$/gi        //匹配首尾空格，但允许中间空格 re=/^1[345678]\d{9}$/    //电话">
+<meta name="twitter:description" content="re=/&amp;lt;[^&amp;lt;&amp;gt;]+&amp;gt;/g        //去除html带标签正则 re=/^\S.*\S$/gi        //匹配首尾空格，但允许中间空格 re=/^1[345678]\d{9}$/    //电话 re=/^[a-zA-Z0-9_-]{4,16}$/    //用户名，4-16位(字母、数字、下划线、减号) re=/^\d+$/    //正整数 re=/^-">
 
 
 
@@ -344,6 +344,23 @@
         <pre><code>re=/&lt;[^&lt;&gt;]+&gt;/g        //去除html带标签正则
 re=/^\S.*\S$/gi        //匹配首尾空格，但允许中间空格
 re=/^1[345678]\d{9}$/    //电话
+re=/^[a-zA-Z0-9_-]{4,16}$/    //用户名，4-16位(字母、数字、下划线、减号)
+re=/^\d+$/    //正整数
+re=/^-\d+$/    //负整数
+re=/^-?\d+$/        //整数
+re=/^\d*\.?\d+$/    //正数
+re=/^-\d*\.?\d+$/    //负数
+re=/^-?\d*\.?\d+$/    //数字
+re=/^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/    //邮箱
+re=/^[1-9]\d{5}(18|19|([23]\d))\d{2}((0[1-9])|(10|11|12))(([0-2][1-9])|10|20|30|31)\d{3}[0-9Xx]$/         //身份证
+re=/^((https?|ftp|file):\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/    //url
+re=/^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/    //IPv4地址
+re=/^#?([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$/        //十六进制颜色正则
+re=/^(?:(?!0000)[0-9]{4}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-8])|(?:0[13-9]|1[0-2])-(?:29|30)|(?:0[13578]|1[02])-31)|(?:[0-9]{2}(?:0[48]|[2468][048]|[13579][26])|(?:0[48]|[2468][048]|[13579][26])00)-02-29)$/        //日期正则
+re=/^[1-9][0-9]{4,10}$/    //QQ号(5至11位)
+re=/^[a-zA-Z]([-_a-zA-Z0-9]{5,19})+$/    //微信号(6至20位，以字母开头，字母，数字，减号，下划线)
+re=/^[京津沪渝冀豫云辽黑湘皖鲁新苏浙赣鄂桂甘晋蒙陕吉闽贵粤青藏川宁琼使领A-Z]{1}[A-Z]{1}[A-Z0-9]{4}[A-Z0-9挂学警港澳]{1}$/    //车牌号
+re=/[\u4E00-\u9FA5]/    //包含中文
 </code></pre>
       
     </div>
@@ -366,7 +383,7 @@ re=/^1[345678]\d{9}$/    //电话
       
         <div class="post-tags">
           
-            <a href="/tags/javascript/" rel="tag">#javascript</a>
+            <a href="/tags/正则/" rel="tag">#正则</a>
           
         </div>
       
@@ -457,7 +474,7 @@ re=/^1[345678]\d{9}$/    //电话
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">25</span>
+              <span class="site-state-item-count">28</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -467,7 +484,7 @@ re=/^1[345678]\d{9}$/    //电话
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-count">11</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
