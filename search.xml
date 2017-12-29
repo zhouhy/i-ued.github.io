@@ -4,6 +4,107 @@
   
     
     <entry>
+      <title><![CDATA[解决移动端页面后退语音继续播放的问题]]></title>
+      <url>http://www.zhouhy.me/2017/12/29/%E8%A7%A3%E5%86%B3%E7%A7%BB%E5%8A%A8%E7%AB%AF%E9%A1%B5%E9%9D%A2%E5%90%8E%E9%80%80%E8%AF%AD%E9%9F%B3%E7%BB%A7%E7%BB%AD%E6%92%AD%E6%94%BE%E7%9A%84%E9%97%AE%E9%A2%98/</url>
+      <content type="html"><![CDATA[<p>在项目中遇到这么一个场景，景点详情页语音播放时，页面后退，此时语音播放并没有因此暂停。解决这个问题的方法：</p>
+<pre><code>window.addEventListener(&apos;popstate&apos;, function(e){
+    self.audio.pause();
+})
+</code></pre><p>知识点：<br>popstate： 点击后退按钮（或在javascript中调用history.back()方法）时触发</p>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> 笔记 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[一套代码同时开发两个项目的解决方案]]></title>
+      <url>http://www.zhouhy.me/2017/11/29/%E4%B8%80%E5%A5%97%E4%BB%A3%E7%A0%81%E5%90%8C%E6%97%B6%E5%BC%80%E5%8F%91%E4%B8%A4%E4%B8%AA%E9%A1%B9%E7%9B%AE%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</url>
+      <content type="html"><![CDATA[<p>开发杏花村项目的时候遇到一个需求，WAP和Wechat的功能模块一样的，只是WAP的页面在Wechat上面增加头尾部，代码需要共用一套。Wechat代码用的是Vue-cli。最终实现方法:</p>
+<p>1.执行命令做区分<br>package.json </p>
+<pre><code>&quot;scripts&quot;: {
+    &quot;dev&quot;: &quot;node build/dev-server.js&quot;,
+    &quot;dev wap&quot;: &quot;node build/dev-server-wap.js WAP&quot;,
+    &quot;start&quot;: &quot;npm run dev&quot;,
+    &quot;build&quot;: &quot;node build/build.js&quot;,
+    &quot;build wap&quot;: &quot;node build/build.js WAP&quot;,
+}
+</code></pre><p>对打包编译和开发做区分，这样能保证WAP和Wechat开发人员能同时进行开发而不互相影响</p>
+<p>2.config/index.js</p>
+<pre><code>// 对接口做判断(两个项目的API接口地址是不同的)
+const apiUrl = (process.argv[2] == &apos;WAP&apos;) ? &apos;WAP API接口&apos; : &apos;Wechat API接口&apos;
+
+module.exports = {
+    build: {
+        env: (process.argv[2] == &apos;WAP&apos;) ? require(&apos;./prod.wap.env&apos;) : require(&apos;./prod.env&apos;)
+    },
+    dev: {
+        env: (process.argv[2] == &apos;WAP&apos;) ? require(&apos;./dev.wap.env&apos;) : require(&apos;./dev.env&apos;)
+    }
+}
+</code></pre><p>3.新增修改对应环境变量的配置文件</p>
+<pre><code>1. 修改dev.env.js
+
+    module.exports = merge(prodEnv, {
+        NODE_ENV: &apos;&quot;development&quot;&apos;,
+        NODE_TERMINAL: &apos;WECHAT&apos;
+    })
+
+2. 修改prod.env.js
+
+    module.exports = {
+      NODE_ENV: &apos;&quot;production&quot;&apos;,
+      NODE_TERMINAL: &apos;&quot;WECHAT&quot;&apos;
+    }
+
+3. 新增dev.wap.env.js
+
+    &apos;use strict&apos;
+    const merge = require(&apos;webpack-merge&apos;)
+    const prodEnv = require(&apos;./prod.env&apos;)
+
+    module.exports = merge(prodEnv, {
+      NODE_ENV: &apos;&quot;development&quot;&apos;,
+      NODE_TERMINAL: &apos;&quot;WAP&quot;&apos;
+    })
+
+4. 新增prod.wap.env.js
+
+    &apos;use strict&apos;
+    module.exports = {
+      NODE_ENV: &apos;&quot;production&quot;&apos;,
+      NODE_TERMINAL: &apos;&quot;WAP&quot;&apos;
+    }
+</code></pre><p>4.main.js</p>
+<p>入口文件需要接收系统变量</p>
+<pre><code>new Vue({
+  el: &apos;#app&apos;,
+  router,
+  data:{
+    TERMINAL: process.env.NODE_TERMINAL
+  },
+  template: &apos;&lt;App/&gt;&apos;,
+  components: { App }
+}) 
+</code></pre><p>5.app.vue</p>
+<pre><code>&lt;router-view :TERMINAL=&quot;$root.TERMINAL&quot; /&gt;
+</code></pre>]]></content>
+      
+        
+        <tags>
+            
+            <tag> 笔记 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[VUEX对IE的支持]]></title>
       <url>http://www.zhouhy.me/2017/08/17/VUEX%E5%AF%B9IE%E7%9A%84%E6%94%AF%E6%8C%81/</url>
       <content type="html"><![CDATA[<p>用VUE搭的一个后台管理系统在IE上跑不起来，并报错：</p>
