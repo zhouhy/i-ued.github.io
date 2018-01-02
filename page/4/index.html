@@ -89,7 +89,7 @@
 <meta name="description" content="所有的可以岁月静好，都是有人为你负重前行。">
 <meta property="og:type" content="website">
 <meta property="og:title" content="晨曦雨梦">
-<meta property="og:url" content="http://www.zhouhy.me/archives/page/2/index.html">
+<meta property="og:url" content="http://www.zhouhy.me/page/4/index.html">
 <meta property="og:site_name" content="晨曦雨梦">
 <meta property="og:description" content="所有的可以岁月静好，都是有人为你负重前行。">
 <meta property="og:locale" content="zh-Hans">
@@ -116,9 +116,9 @@
 
 
 
-  <link rel="canonical" href="http://www.zhouhy.me/archives/page/2/"/>
+  <link rel="canonical" href="http://www.zhouhy.me/page/4/"/>
 
-  <title> 归档 | 晨曦雨梦 </title>
+  <title> 晨曦雨梦 </title>
  
 </head>
 
@@ -150,7 +150,9 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  page-archive  ">
+  <div class="container one-collumn sidebar-position-left 
+   page-home 
+ ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -270,402 +272,167 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
+  <section id="posts" class="posts-expand">
+    
+      
 
-  <section id="posts" class="posts-collapse">
-    <span class="archive-move-on"></span>
+  
+  
 
-    <span class="archive-page-counter">
-      
-      
-       
-      
-      OK! 目前共计 31 篇日志。 继续努力。
-    </span>
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
 
     
+      <header class="post-header">
 
-      
-      
-      
-
-      
         
-        <div class="collection-title">
-          <h2 class="archive-year motion-element" id="archive-year-2017">2017</h2>
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/05/27/js实现无限层级树形结构（有点类似递归）/" itemprop="url">
+                  js实现无限层级树形结构（有点类似递归）
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-05-27T14:13:58+08:00" content="2016-05-27">
+              2016-05-27
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/05/27/js实现无限层级树形结构（有点类似递归）/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/27/js实现无限层级树形结构（有点类似递归）/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
         </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
       
       
 
       
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
         
-            <a class="post-title-link" href="/2017/06/01/Vue-报错Cannot-assign-to-read-only-property-exports-of-object-Object/" itemprop="url">
-              
-                <span itemprop="name">Vue 报错Cannot assign to read only property 'exports' of object '#<Object>'</span>
-              
-            </a>
+          
+            <pre><code>var zNodes=[
+    {id:1,pId:0,name:&quot;0A&quot;},
+    {id:11,pId:1,name:&quot;1A1&quot;},
+    {id:12,pId:1,name:&quot;1A2&quot;},
+    {id:13,pId:1,name:&quot;1A3&quot;},
+    {id:2,pId:0,name:&quot;0B&quot;},
+    {id:21,pId:2,name:&quot;2B1&quot;},
+    {id:22,pId:2,name:&quot;2B2&quot;},
+    {id:23,pId:2,name:&quot;2B3&quot;},
+    {id:3,pId:0,name:&quot;0C&quot;},
+    {id:31,pId:3,name:&quot;3C1&quot;},
+    {id:32,pId:3,name:&quot;3C2&quot;},
+    {id:33,pId:3,name:&quot;3C3&quot;},
+    {id:34,pId:31,name:&quot;31x&quot;},
+    {id:35,pId:31,name:&quot;31y&quot;},
+    {id:36,pId:31,name:&quot;31z&quot;},
+    {id:37,pId:36,name:&quot;36z&quot;} ,
+    {id:38,pId:37,name:&quot;37z&quot;}
+];
+function treeMenu(a){
+    this.tree=a||[];
+    this.groups={};
+};
+treeMenu.prototype={
+init:function(pid){
+    this.group();
+    return this.getDom(this.groups[pid]);
+},
+group:function(){
+    for(var i=0;i&lt;this.tree.length;i++){
+        if(this.groups[this.tree[i].pId]){
+            this.groups[this.tree[i].pId].push(this.tree[i]);
+        }else{
+            this.groups[this.tree[i].pId]=[];
+            this.groups[this.tree[i].pId].push(this.tree[i]);
+        }
+    }
+    console.dir(this.groups)
+},
+getDom:function(a){
+    if(!a){return &apos;&apos;}
+    var html=&apos;\n&lt;ul &gt;\n&apos;;
+    for(var i=0;i&lt;a.length;i++){
+        html+=&apos;&lt;li&gt;&lt;a href=&quot;#&quot;&gt;&apos;+a[i].name+&apos;&lt;/a&gt;&apos;;
+        html+=this.getDom(this.groups[a[i].id]);
+        html+=&apos;&lt;/li&gt;\n&apos;;
+    };
+    html+=&apos;&lt;/ul&gt;\n&apos;;
+    return html;
+}
+};
+var html=new treeMenu(zNodes).init(0);
+console.log(html);
+</code></pre>
+          
         
-      </h1>
+      
+    </div>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-06-01T10:47:42+08:00"
-              content="2017-06-01" >
-          06-01
-        </time>
-      </div>
+    <div>
+      
+    </div>
 
-    </header>
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
   </article>
 
 
-
     
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2017/05/27/git常用命令速查表/" itemprop="url">
-              
-                <span itemprop="name">git常用命令速查表</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-05-27T09:49:55+08:00"
-              content="2017-05-27" >
-          05-27
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2017/05/09/TypeError-require-extensions-hasOwnProperty-is-not-a-function/" itemprop="url">
-              
-                <span itemprop="name">TypeError: require.extensions.hasOwnProperty is not a function</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-05-09T17:42:24+08:00"
-              content="2017-05-09" >
-          05-09
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2017/04/25/Node-js开发需要注意的问题/" itemprop="url">
-              
-                <span itemprop="name">Node.js开发需要注意的问题(后期陆续更新)</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-04-25T15:48:06+08:00"
-              content="2017-04-25" >
-          04-25
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2017/04/25/Node-js中日志管理模块使用/" itemprop="url">
-              
-                <span itemprop="name">Node.js中日志管理模块使用</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-04-25T14:47:25+08:00"
-              content="2017-04-25" >
-          04-25
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2017/04/14/WebStorm无法显示文件夹目录/" itemprop="url">
-              
-                <span itemprop="name">WebStorm无法显示文件夹目录</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-04-14T11:49:05+08:00"
-              content="2017-04-14" >
-          04-14
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2017/04/07/css处理浏览器输入框记住账号密码后的背景色/" itemprop="url">
-              
-                <span itemprop="name">css处理浏览器输入框记住账号密码后的背景色</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-04-07T11:06:00+08:00"
-              content="2017-04-07" >
-          04-07
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2017/03/24/在webstorm中使用autoprefixer/" itemprop="url">
-              
-                <span itemprop="name">在webstorm中使用autoprefixer</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-03-24T14:09:14+08:00"
-              content="2017-03-24" >
-          03-24
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2017/03/15/content-IE-edge-chrome-1详解/" itemprop="url">
-              
-                <span itemprop="name">content="IE=edge,chrome"=1详解</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-03-15T14:06:48+08:00"
-              content="2017-03-15" >
-          03-15
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2017/03/14/在hexo文章里插入图片/" itemprop="url">
-              
-                <span itemprop="name">在hexo文章里插入本地图片</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-03-14T16:06:38+08:00"
-              content="2017-03-14" >
-          03-14
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/archives/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/archives/">1</a><span class="page-number current">2</span><a class="page-number" href="/archives/page/3/">3</a><a class="page-number" href="/archives/page/4/">4</a><a class="extend next" rel="next" href="/archives/page/3/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span>
   </nav>
-
 
 
 
@@ -866,12 +633,6 @@
   
 
   
-  
-    <script type="text/javascript" id="motion.page.archive">
-      $('.archive-year').velocity('transition.slideLeftIn');
-    </script>
-  
-
 
   
 

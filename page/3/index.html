@@ -295,6 +295,118 @@
             
               
                 
+                <a class="post-title-link" href="/2017/03/14/在GIT中增加忽略文件夹与文件/" itemprop="url">
+                  在GIT中增加忽略文件夹与文件
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-03-14T15:42:28+08:00" content="2017-03-14">
+              2017-03-14
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/03/14/在GIT中增加忽略文件夹与文件/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/14/在GIT中增加忽略文件夹与文件/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <ol>
+<li>在工作目录中右键选择<br><img src="/img/GIT.jpg" alt=""></li>
+<li>输入touch .gitingore<br><br>这样在工作目录就生成了一个”.gitignore”文件</li>
+<li>然后在“.gitignore”里面写上你要忽略的文件夹与文件即可。例如：<br> .DS_Store<br>.idea/<br>module/build/</li>
+</ol>
+<hr>
+<p>注：如果文件已经提交到仓库了，那么就需要在缓存中将其清空：</p>
+<ol>
+<li>git rm -r - -cached “要取消的目录”</li>
+<li>git commit -m “delete cached”<br><br>这样就OK了.</li>
+</ol>
+<p>PS:<strong>在项目的根目录（.git文件夹所在目录同级）建立.gitignore，在里面声明即可。</strong></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2017/02/23/jsmap/" itemprop="url">
                   JS自带map方法
                 </a>
@@ -1450,164 +1562,11 @@ let difference = new Set([...a].filter(x =&gt; !b.has(x)))
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/05/27/js实现无限层级树形结构（有点类似递归）/" itemprop="url">
-                  js实现无限层级树形结构（有点类似递归）
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-05-27T14:13:58+08:00" content="2016-05-27">
-              2016-05-27
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/05/27/js实现无限层级树形结构（有点类似递归）/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/27/js实现无限层级树形结构（有点类似递归）/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <pre><code>var zNodes=[
-    {id:1,pId:0,name:&quot;0A&quot;},
-    {id:11,pId:1,name:&quot;1A1&quot;},
-    {id:12,pId:1,name:&quot;1A2&quot;},
-    {id:13,pId:1,name:&quot;1A3&quot;},
-    {id:2,pId:0,name:&quot;0B&quot;},
-    {id:21,pId:2,name:&quot;2B1&quot;},
-    {id:22,pId:2,name:&quot;2B2&quot;},
-    {id:23,pId:2,name:&quot;2B3&quot;},
-    {id:3,pId:0,name:&quot;0C&quot;},
-    {id:31,pId:3,name:&quot;3C1&quot;},
-    {id:32,pId:3,name:&quot;3C2&quot;},
-    {id:33,pId:3,name:&quot;3C3&quot;},
-    {id:34,pId:31,name:&quot;31x&quot;},
-    {id:35,pId:31,name:&quot;31y&quot;},
-    {id:36,pId:31,name:&quot;31z&quot;},
-    {id:37,pId:36,name:&quot;36z&quot;} ,
-    {id:38,pId:37,name:&quot;37z&quot;}
-];
-function treeMenu(a){
-    this.tree=a||[];
-    this.groups={};
-};
-treeMenu.prototype={
-init:function(pid){
-    this.group();
-    return this.getDom(this.groups[pid]);
-},
-group:function(){
-    for(var i=0;i&lt;this.tree.length;i++){
-        if(this.groups[this.tree[i].pId]){
-            this.groups[this.tree[i].pId].push(this.tree[i]);
-        }else{
-            this.groups[this.tree[i].pId]=[];
-            this.groups[this.tree[i].pId].push(this.tree[i]);
-        }
-    }
-    console.dir(this.groups)
-},
-getDom:function(a){
-    if(!a){return &apos;&apos;}
-    var html=&apos;\n&lt;ul &gt;\n&apos;;
-    for(var i=0;i&lt;a.length;i++){
-        html+=&apos;&lt;li&gt;&lt;a href=&quot;#&quot;&gt;&apos;+a[i].name+&apos;&lt;/a&gt;&apos;;
-        html+=this.getDom(this.groups[a[i].id]);
-        html+=&apos;&lt;/li&gt;\n&apos;;
-    };
-    html+=&apos;&lt;/ul&gt;\n&apos;;
-    return html;
-}
-};
-var html=new treeMenu(zNodes).init(0);
-console.log(html);
-</code></pre>
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
+    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1648,7 +1607,7 @@ console.log(html);
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">30</span>
+              <span class="site-state-item-count">31</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1715,7 +1674,7 @@ console.log(html);
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2017</span>
+  <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

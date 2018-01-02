@@ -295,6 +295,108 @@
             
               
                 
+                <a class="post-title-link" href="/2017/06/01/Vue-报错Cannot-assign-to-read-only-property-exports-of-object-Object/" itemprop="url">
+                  Vue 报错Cannot assign to read only property 'exports' of object '#<Object>'
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-06-01T10:47:42+08:00" content="2017-06-01">
+              2017-06-01
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/06/01/Vue-报错Cannot-assign-to-read-only-property-exports-of-object-Object/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/06/01/Vue-报错Cannot-assign-to-read-only-property-exports-of-object-Object/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>今天在项目里遇到一个错误，<br>    <code>Uncaught TypeError: Cannot assign to read only property &#39;exports&#39; of object &#39;#Object&#39; at Object.anonymous</code></p>
+<p>网上搜了一下，是因为webpack中，不允许混用import 和 module.exports，但是可以混用require和export.<br>最终解决方法是统一改成ES6写法.</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2017/05/27/git常用命令速查表/" itemprop="url">
                   git常用命令速查表
                 </a>
@@ -1313,123 +1415,11 @@ input {
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/03/14/在GIT中增加忽略文件夹与文件/" itemprop="url">
-                  在GIT中增加忽略文件夹与文件
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-03-14T15:42:28+08:00" content="2017-03-14">
-              2017-03-14
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2017/03/14/在GIT中增加忽略文件夹与文件/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/14/在GIT中增加忽略文件夹与文件/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <ol>
-<li>在工作目录中右键选择<br><img src="/img/GIT.jpg" alt=""></li>
-<li>输入touch .gitingore<br><br>这样在工作目录就生成了一个”.gitignore”文件</li>
-<li>然后在“.gitignore”里面写上你要忽略的文件夹与文件即可。例如：<br> .DS_Store<br>.idea/<br>module/build/</li>
-</ol>
-<hr>
-<p>注：如果文件已经提交到仓库了，那么就需要在缓存中将其清空：</p>
-<ol>
-<li>git rm -r - -cached “要取消的目录”</li>
-<li>git commit -m “delete cached”<br><br>这样就OK了.</li>
-</ol>
-<p>PS:<strong>在项目的根目录（.git文件夹所在目录同级）建立.gitignore，在里面声明即可。</strong></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1470,7 +1460,7 @@ input {
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">30</span>
+              <span class="site-state-item-count">31</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1537,7 +1527,7 @@ input {
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2017</span>
+  <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

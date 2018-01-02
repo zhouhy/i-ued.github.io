@@ -4,6 +4,30 @@
   
     
     <entry>
+      <title><![CDATA[网站字体预设]]></title>
+      <url>http://www.zhouhy.me/2018/01/02/%E7%BD%91%E7%AB%99%E5%AD%97%E4%BD%93%E9%A2%84%E8%AE%BE/</url>
+      <content type="html"><![CDATA[<p>浏览器推荐字体：</p>
+<p>windows: MicroSoft YaHei(微软雅黑)<br>Mac OS: pingfang SC(苹方) 或 Hiragino Sans GS(冬青黑体)</p>
+<p>css写法：</p>
+<pre><code>body {
+    font-family: -apple-system, BlinkMacSystemFont, &apos;Microsoft Yahei&apos;, sans-serif;
+}
+</code></pre><ul>
+<li>-apple-system  是在以webkit为内核的浏览器(如safari),调用苹果公司系统中默认字体（默认情况下，英文san francisco,中文是苹方）</li>
+<li>BlinkMacSystemFont 是在chrome中实现调用Applre在系统字体</li>
+</ul>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> CSS </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[解决移动端页面后退语音继续播放的问题]]></title>
       <url>http://www.zhouhy.me/2017/12/29/%E8%A7%A3%E5%86%B3%E7%A7%BB%E5%8A%A8%E7%AB%AF%E9%A1%B5%E9%9D%A2%E5%90%8E%E9%80%80%E8%AF%AD%E9%9F%B3%E7%BB%A7%E7%BB%AD%E6%92%AD%E6%94%BE%E7%9A%84%E9%97%AE%E9%A2%98/</url>
       <content type="html"><![CDATA[<p>在项目中遇到这么一个场景，景点详情页语音播放时，页面后退，此时语音播放并没有因此暂停。解决这个问题的方法：</p>
