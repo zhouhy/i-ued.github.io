@@ -70,7 +70,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="javascript," />
 
 
 
@@ -86,17 +86,18 @@
 
 
 
-<meta name="description" content="layout: falsev01GL2aYib">
-<meta property="og:type" content="website">
-<meta property="og:title" content="晨曦雨梦">
-<meta property="og:url" content="http://www.zhouhy.me/baidu_verify_v01GL2aYib.html">
+<meta name="description" content="无论是H5支付还是原生APP支付，前台只需要使用服务器返回的数据调起支付就可以了。支付流程：前台通过下单接口创建订单，服务器根据支付宝提供的SDK，进行签名等一系列操作，具体可以参见支付宝官方文档。当服务器完成这些操作后就会返回一个form表单。前端提交这个表单就可以了。 返回的表单内容大致为： &amp;lt;form name=&amp;quot;punchout_form&amp;quot; method=&amp;quo">
+<meta name="keywords" content="javascript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vue2.0调用支付宝H5接口">
+<meta property="og:url" content="http://www.zhouhy.me/2018/03/29/Vue2-0调用支付宝H5接口/index.html">
 <meta property="og:site_name" content="晨曦雨梦">
-<meta property="og:description" content="layout: falsev01GL2aYib">
+<meta property="og:description" content="无论是H5支付还是原生APP支付，前台只需要使用服务器返回的数据调起支付就可以了。支付流程：前台通过下单接口创建订单，服务器根据支付宝提供的SDK，进行签名等一系列操作，具体可以参见支付宝官方文档。当服务器完成这些操作后就会返回一个form表单。前端提交这个表单就可以了。 返回的表单内容大致为： &amp;lt;form name=&amp;quot;punchout_form&amp;quot; method=&amp;quo">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-03-13T03:06:11.543Z">
+<meta property="og:updated_time" content="2018-03-29T08:08:52.016Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="晨曦雨梦">
-<meta name="twitter:description" content="layout: falsev01GL2aYib">
+<meta name="twitter:title" content="Vue2.0调用支付宝H5接口">
+<meta name="twitter:description" content="无论是H5支付还是原生APP支付，前台只需要使用服务器返回的数据调起支付就可以了。支付流程：前台通过下单接口创建订单，服务器根据支付宝提供的SDK，进行签名等一系列操作，具体可以参见支付宝官方文档。当服务器完成这些操作后就会返回一个form表单。前端提交这个表单就可以了。 返回的表单内容大致为： &amp;lt;form name=&amp;quot;punchout_form&amp;quot; method=&amp;quo">
 
 
 
@@ -117,15 +118,9 @@
 
 
 
-  <link rel="canonical" href="http://www.zhouhy.me/baidu_verify_v01GL2aYib.html"/>
+  <link rel="canonical" href="http://www.zhouhy.me/2018/03/29/Vue2-0调用支付宝H5接口/"/>
 
-  <title>
-  
-
-  
-     | 晨曦雨梦
-  
-</title>
+  <title> Vue2.0调用支付宝H5接口 | 晨曦雨梦 </title>
  
 </head>
 
@@ -157,7 +152,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -280,10 +275,138 @@
 
   <div id="posts" class="posts-expand">
     
-    
-      <p>layout: false<br>v01GL2aYib</p>
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
 
     
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Vue2.0调用支付宝H5接口
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2018-03-29T15:48:07+08:00" content="2018-03-29">
+              2018-03-29
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2018/03/29/Vue2-0调用支付宝H5接口/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2018/03/29/Vue2-0调用支付宝H5接口/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>无论是H5支付还是原生APP支付，前台只需要使用服务器返回的数据调起支付就可以了。支付流程：前台通过下单接口创建订单，服务器根据支付宝提供的SDK，进行签名等一系列操作，具体可以参见支付宝官方文档。当服务器完成这些操作后就会返回一个form表单。前端提交这个表单就可以了。</p>
+<p>返回的表单内容大致为：</p>
+<pre><code>&lt;form name=&quot;punchout_form&quot; method=&quot;post&quot; action=&quot;https://openapi.alipay.com/gateway.do?charset=UTF-8&amp;method=alipay.trade.pag…03-29+16%3A00%3A37&amp;alipay_sdk=alipay-sdk-java-dynamicVersionNo&amp;format=json&quot;&gt;
+&lt;input type=&quot;hidden&quot; name=&quot;biz_content&quot; value=&quot;{&amp;quot;out_trade_no&amp;quot;:&amp;quot;订单号&amp;quot;,&amp;quot;subject&amp;quot;:&amp;quot;景区旺季票（不含观光车）&amp;quot;,&amp;quot;total_amount&amp;quot;:145.0,&amp;quot;product_code&amp;quot;:&amp;quot;FAST_INSTANT_TRADE_PAY&amp;quot;}&quot;&gt;
+&lt;input type=&quot;submit&quot; value=&quot;立即支付&quot; style=&quot;display:none&quot; &gt;
+&lt;/form&gt;
+&lt;script&gt;document.forms[0].submit();&lt;/script&gt;
+</code></pre><p>拿到返回的form表单字符串，怎么调用这个表单呢？代码如下：</p>
+<pre><code>const div = document.createElement(&apos;div&apos;)
+div.innerHtml = response.data
+document.body.appendChild(div)
+document.forms[0].submit()
+</code></pre><p>其中response是接收返回的数据</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/javascript/" rel="tag">#javascript</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/01/02/网站字体预设/" rel="next" title="网站字体预设">
+                <i class="fa fa-chevron-left"></i> 网站字体预设
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -294,8 +417,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="baidu_verify_v01GL2aYib.html"
-           data-title="" data-url="http://www.zhouhy.me/baidu_verify_v01GL2aYib.html">
+      <div class="ds-thread" data-thread-key="2018/03/29/Vue2-0调用支付宝H5接口/"
+           data-title="Vue2.0调用支付宝H5接口" data-url="http://www.zhouhy.me/2018/03/29/Vue2-0调用支付宝H5接口/">
       </div>
     
   </div>
@@ -319,8 +442,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -383,6 +515,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">此文章未包含目录</p>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -492,6 +635,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
 
   
 

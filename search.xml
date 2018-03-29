@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title><![CDATA[Vue2.0调用支付宝H5接口]]></title>
+      <url>http://www.zhouhy.me/2018/03/29/Vue2-0%E8%B0%83%E7%94%A8%E6%94%AF%E4%BB%98%E5%AE%9DH5%E6%8E%A5%E5%8F%A3/</url>
+      <content type="html"><![CDATA[<p>无论是H5支付还是原生APP支付，前台只需要使用服务器返回的数据调起支付就可以了。支付流程：前台通过下单接口创建订单，服务器根据支付宝提供的SDK，进行签名等一系列操作，具体可以参见支付宝官方文档。当服务器完成这些操作后就会返回一个form表单。前端提交这个表单就可以了。</p>
+<p>返回的表单内容大致为：</p>
+<pre><code>&lt;form name=&quot;punchout_form&quot; method=&quot;post&quot; action=&quot;https://openapi.alipay.com/gateway.do?charset=UTF-8&amp;method=alipay.trade.pag…03-29+16%3A00%3A37&amp;alipay_sdk=alipay-sdk-java-dynamicVersionNo&amp;format=json&quot;&gt;
+&lt;input type=&quot;hidden&quot; name=&quot;biz_content&quot; value=&quot;{&amp;quot;out_trade_no&amp;quot;:&amp;quot;订单号&amp;quot;,&amp;quot;subject&amp;quot;:&amp;quot;景区旺季票（不含观光车）&amp;quot;,&amp;quot;total_amount&amp;quot;:145.0,&amp;quot;product_code&amp;quot;:&amp;quot;FAST_INSTANT_TRADE_PAY&amp;quot;}&quot;&gt;
+&lt;input type=&quot;submit&quot; value=&quot;立即支付&quot; style=&quot;display:none&quot; &gt;
+&lt;/form&gt;
+&lt;script&gt;document.forms[0].submit();&lt;/script&gt;
+</code></pre><p>拿到返回的form表单字符串，怎么调用这个表单呢？代码如下：</p>
+<pre><code>const div = document.createElement(&apos;div&apos;)
+div.innerHtml = response.data
+document.body.appendChild(div)
+document.forms[0].submit()
+</code></pre><p>其中response是接收返回的数据</p>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> javascript </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[网站字体预设]]></title>
       <url>http://www.zhouhy.me/2018/01/02/%E7%BD%91%E7%AB%99%E5%AD%97%E4%BD%93%E9%A2%84%E8%AE%BE/</url>
       <content type="html"><![CDATA[<p>浏览器推荐字体：</p>

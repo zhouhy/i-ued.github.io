@@ -295,6 +295,119 @@
             
               
                 
+                <a class="post-title-link" href="/2018/03/29/Vue2-0调用支付宝H5接口/" itemprop="url">
+                  Vue2.0调用支付宝H5接口
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2018-03-29T15:48:07+08:00" content="2018-03-29">
+              2018-03-29
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2018/03/29/Vue2-0调用支付宝H5接口/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2018/03/29/Vue2-0调用支付宝H5接口/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>无论是H5支付还是原生APP支付，前台只需要使用服务器返回的数据调起支付就可以了。支付流程：前台通过下单接口创建订单，服务器根据支付宝提供的SDK，进行签名等一系列操作，具体可以参见支付宝官方文档。当服务器完成这些操作后就会返回一个form表单。前端提交这个表单就可以了。</p>
+<p>返回的表单内容大致为：</p>
+<pre><code>&lt;form name=&quot;punchout_form&quot; method=&quot;post&quot; action=&quot;https://openapi.alipay.com/gateway.do?charset=UTF-8&amp;method=alipay.trade.pag…03-29+16%3A00%3A37&amp;alipay_sdk=alipay-sdk-java-dynamicVersionNo&amp;format=json&quot;&gt;
+&lt;input type=&quot;hidden&quot; name=&quot;biz_content&quot; value=&quot;{&amp;quot;out_trade_no&amp;quot;:&amp;quot;订单号&amp;quot;,&amp;quot;subject&amp;quot;:&amp;quot;景区旺季票（不含观光车）&amp;quot;,&amp;quot;total_amount&amp;quot;:145.0,&amp;quot;product_code&amp;quot;:&amp;quot;FAST_INSTANT_TRADE_PAY&amp;quot;}&quot;&gt;
+&lt;input type=&quot;submit&quot; value=&quot;立即支付&quot; style=&quot;display:none&quot; &gt;
+&lt;/form&gt;
+&lt;script&gt;document.forms[0].submit();&lt;/script&gt;
+</code></pre><p>拿到返回的form表单字符串，怎么调用这个表单呢？代码如下：</p>
+<pre><code>const div = document.createElement(&apos;div&apos;)
+div.innerHtml = response.data
+document.body.appendChild(div)
+document.forms[0].submit()
+</code></pre><p>其中response是接收返回的数据</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2018/01/02/网站字体预设/" itemprop="url">
                   网站字体预设
                 </a>
@@ -1340,109 +1453,6 @@ const Baz = r =&gt; require.ensure([],()=&gt;r(require(&apos;./Baz.vue&apos;)),&
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/06/09/webstorm里运行gulp任务时报错failed-to-list-tasks/" itemprop="url">
-                  webstorm里运行gulp任务时报错failed to list tasks
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-06-09T17:46:50+08:00" content="2017-06-09">
-              2017-06-09
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2017/06/09/webstorm里运行gulp任务时报错failed-to-list-tasks/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/06/09/webstorm里运行gulp任务时报错failed-to-list-tasks/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>开发过程中，由于更新了Node.js的版本，导致用gulp构建打包项目的时候，会报错：<br>failed to list tasks<br>webstrom窗口不能正确显示gulp的任务列表</p>
-<p>百度解决办法：点击任务列表右侧的齿轮，选择gulp settings，在gulp package一行里添加你的gulp路径。<br>比如：E:\projectnode_modules\gulp</p>
-<p>参考资料：<a href="https://stackoverflow.com/questions/32825617/gulp-error-in-webstorm-failed-to-list-gulp-tasks" target="_blank" rel="external">https://stackoverflow.com/questions/32825617/gulp-error-in-webstorm-failed-to-list-gulp-tasks</a></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1488,7 +1498,7 @@ const Baz = r =&gt; require.ensure([],()=&gt;r(require(&apos;./Baz.vue&apos;)),&
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">31</span>
+              <span class="site-state-item-count">32</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
